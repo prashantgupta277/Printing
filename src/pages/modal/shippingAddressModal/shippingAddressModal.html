@@ -1,0 +1,68 @@
+<ion-content class="sample-modal-page">
+    <div padding>
+        <!-- shipping address -->
+        <ion-grid class="">
+            <div text-uppercase text-center margin-top margin-bottom class="fs16 fw500 textTheme">
+                shipping Details
+            </div>
+            
+            <ion-row class="mtop_minus15px">
+                <ion-col col-4>
+                    <ion-label fixed text-uppercase class="fs10 fw600">Address:</ion-label>
+                </ion-col>
+                <ion-col col-8>
+                    <ion-input type="text" value="" [(ngModel)]="ShippingFinalDetails.sh_address" class="input_css"></ion-input>
+                </ion-col>
+            </ion-row>
+            
+            <ion-row class="mtop_minus15px">
+                <ion-col col-4>
+                    <ion-label fixed text-uppercase class="fs10 fw600">ZIP CODE:</ion-label>
+                </ion-col>
+                <ion-col col-8>
+                    <ion-input type="text" value="" [(ngModel)]="ShippingFinalDetails.sh_zipcode" class="input_css"></ion-input>
+                </ion-col>
+            </ion-row>
+
+            <ion-row class="mtop_minus15px">
+                <ion-col col-4>
+                    <ion-label fixed text-uppercase class="fs10 fw600">country:</ion-label>
+                </ion-col>
+                <ion-col col-8 style="padding-top: 13px;">
+                    <ion-select (ionChange)="stateLoad($event)" [(ngModel)]="ShippingFinalDetails.shp_country1" class="fw500 buildSelect ionselectClass">
+                        <ion-option *ngFor="let country of countryList" value="{{country.id}}">{{country.name}}</ion-option>
+                    </ion-select>
+                </ion-col>
+            </ion-row>
+
+            <ion-row class="mtop_minus15px">
+                <ion-col col-4>
+                    <ion-label fixed text-uppercase class="fs10 fw600">REGION/PROVINCE:</ion-label>
+                </ion-col>
+                <ion-col col-8 style="padding-top: 13px;">
+                    <ion-select (ionChange)="cityLoad($event)" [(ngModel)]="ShippingFinalDetails.sh_region"  class="fw500 buildSelect ionselectClass">
+                            <ion-option *ngFor="let state of stateList" value="{{state.id}}">{{state.name}}</ion-option>
+                    </ion-select>
+                </ion-col>
+            </ion-row>
+
+            <ion-row class="mtop_minus15px">
+                <ion-col col-4>
+                    <ion-label fixed text-uppercase class="fs10 fw600">city:</ion-label>
+                </ion-col>
+                <ion-col col-8 style="padding-top: 13px;">
+                    <ion-select  [(ngModel)]="ShippingFinalDetails.shp_city1" class="fw500 buildSelect ionselectClass">
+                        <ion-option *ngFor="let city of cityList" value="{{city.id}}" >{{city.name}}</ion-option>
+                    </ion-select>
+                </ion-col>
+            </ion-row>
+            
+        </ion-grid>
+        <div text-center class="padding10">
+        <!-- <button ion-button class="logoutButton border-black">log out</button> -->
+        <button ion-button class="logoutButton border-black" (click)="saveData()">
+            save
+            </button>
+        </div>    
+    </div>
+</ion-content>

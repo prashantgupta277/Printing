@@ -1,0 +1,33 @@
+page-categoryFilter {
+    .checkbox-margin{
+        margin: 9px 9px 9px 4px !important;
+    }
+    .item-inner {
+        padding-right: 8px;
+        border-bottom: none !important;
+    }
+    .text-webkit{
+        text-align: -webkit-center !important;
+    }
+    .okButton{
+        width: 100px !important;
+        height: 30px !important;
+        border-radius: 5px !important;
+        color: #fff !important;
+        font-size: 18px !important;
+        text-transform: capitalize !important;
+    }
+    .posBot{
+        position: absolute !important;
+        width: 100% !important;
+        bottom: 30px !important;
+    }
+    .checkbox-md-primary .checkbox-checked {
+        border-color: #007a95 !important;
+        background-color: #007a95 !important;
+    }
+    .checkbox-ios-primary .checkbox-checked {
+        border-color: #007a95 !important;
+        background-color: #007a95 !important;
+    }
+}

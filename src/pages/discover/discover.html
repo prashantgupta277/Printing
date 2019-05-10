@@ -1,0 +1,56 @@
+
+<ion-header no-border>
+  <ion-toolbar transparent class="themColor white">
+      <button ion-button menuToggle >
+        <ion-icon name="menu" class="white"></ion-icon>
+      </button>
+      <ion-title>
+        <div text-center style="margin-left: 38px;">
+          <img src="/assets/icon/logo_alex.png" alt="logo" style="width:120px;"/>
+        </div>
+      </ion-title>
+      <ion-buttons end>
+          <button style="background:transparent;" (click)="back()">
+              <img src="/assets/icon/app_icon/back.png" alt="logo" style="width:30px;"/>
+          </button>
+      </ion-buttons>  
+  </ion-toolbar>  
+</ion-header>
+<ion-content>
+    <div *ngIf="ShowShortFilter != true">
+        <div text-center>
+            <ion-searchbar placeholder="Type Of Serach" showCancelButton cancelButtonText="Custom Cancel" (ionChange)="loadcatSearch()" [(ngModel)]="SearchValue"></ion-searchbar>
+        </div>
+        <div text-center *ngIf="this.SearchValue != ''">
+          <h4>Result for "{{SearchValue}}"</h4>
+        </div>
+        <!-- --------Filters---- -->
+        <ion-row>
+          <ion-col col-6>
+            <div class="buttonDiv">
+              <button class="themColor DiscoverButton" (click)="Filter()">Filters</button>
+            </div>
+          </ion-col>
+          <ion-col col-6>
+            <div class="buttonDiv">
+              <button class="themColor DiscoverButton" (click)="short()">Sort By</button>
+            </div>
+          </ion-col>
+        </ion-row>
+        <!-- --------Filters---- -->
+        <!-- --------ShowProduct---- -->
+        <ion-grid no-padding>
+          <ion-row>
+            <ion-col col-6 no-padding *ngFor="let item of categories" >
+              <ion-card (click)="details(item.id)">
+                <img src="{{imgUrl}}{{item.image}}" alt="logo" style="height: 100%;"/>
+                <div class="opctyDiv">
+                  <h2 class="opctyText">{{item.category_name}}</h2>
+                </div>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <!-- --------ShowProduct---- -->
+    </div>
+</ion-content>

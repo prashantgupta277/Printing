@@ -1,0 +1,116 @@
+page-discover {
+    ion-card {
+        position: relative !important;
+        height: 150px !important;
+        border-radius: 5px !important;
+      }
+    
+    .card-title {
+        position: absolute !important;
+        bottom: 10px !important;
+        width: 100% !important;
+        text-align: center !important;
+    }
+    .card-title-inner{
+        font-size: 12px !important;
+        color: #fff;
+        width: 70% !important;
+        background-color: #02286b !important;
+        border-radius: 5px !important;
+        margin: auto !important
+    }
+    .DiscoverButton{
+        width: 70% !important;
+        height: 25px !important;
+        color: white !important;
+        font-weight: 600 !important;
+        font-size: 15px !important;
+        border-radius: 5px !important;
+        border: 1px solid #000000 !important;
+        text-transform: uppercase !important;
+        margin-bottom: 25px !important;
+        margin-top: 10px !important;
+    }
+    .buttonDiv{
+        text-align: center !important;
+        width: 100% !important;
+        overflow: overlay !important;
+    }
+    .opctyDiv{
+        position: absolute !important;
+        height: 20px !important;
+        width: 100% !important;
+        background: rgba(255, 255, 255, 0.7) !important;
+        opacity: 5.1 !important;
+        text-align: center !important;
+        top: 0px !important;
+    }
+    .opctyText{
+        font-size: 14px !important;
+        font-weight: 600 !important;
+        color: #007a95 !important;
+        text-transform: uppercase !important;
+    }
+    .searchbar-input-container{
+        border: 2px solid #007a95 !important;
+        border-radius: 5px !important;
+    }
+    .searchbar-md .searchbar-input {
+        padding: 6px 16px !important;
+        font-weight: 600 !important;
+        color: #007a95 !important;
+        box-shadow: none !important;
+    }
+    .button-clear-md-dark {
+        display: none !important;
+    }
+    .searchbar-md .searchbar-search-icon, .searchbar-md .searchbar-md-cancel {
+        background-size: 0px !important;
+    }
+    .searchbar-ios .searchbar-input {
+        padding: 6px 16px !important;
+        font-weight: 600 !important;
+        color: #007a95 !important;
+        box-shadow: none !important;
+    }
+    .searchbar-ios .searchbar-search-icon, .searchbar-md .searchbar-md-cancel {
+        background-size: 0px !important;
+    }
+    .button-clear-ios-dark {
+        display: none !important;
+    }
+
+    // -----ForFilter-----
+    .checkbox-margin{
+        margin: 9px 9px 9px 4px !important;
+    }
+    .item-inner {
+        padding-right: 8px;
+        border-bottom: none !important;
+    }
+    .text-webkit{
+        text-align: -webkit-center !important;
+    }
+    .okButton{
+        width: 100px !important;
+        height: 30px !important;
+        border-radius: 5px !important;
+        color: #fff !important;
+        font-size: 18px !important;
+        text-transform: capitalize !important;
+    }
+    .posBot{
+        position: absolute !important;
+        width: 100% !important;
+        bottom: 30px !important;
+    }
+    .checkbox-md-primary .checkbox-checked {
+        border-color: #007a95 !important;
+        background-color: #007a95 !important;
+    }
+    .checkbox-ios-primary .checkbox-checked {
+        border-color: #007a95 !important;
+        background-color: #007a95 !important;
+    }
+   
+}

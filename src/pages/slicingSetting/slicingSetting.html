@@ -1,0 +1,803 @@
+
+
+<ion-header no-border>
+    <ion-toolbar transparent class="themColor white">
+        <button ion-button menuToggle >
+          <ion-icon name="menu" class="white"></ion-icon>
+        </button>
+        <ion-title>
+            <div text-center style="margin-left: 38px;">
+                <img src="/assets/icon/logo_alex.png" alt="logo" style="width:120px;"/>
+            </div>
+        </ion-title>
+        <ion-buttons end>
+            <button style="background:transparent;" (click)="back()">
+                <img src="/assets/icon/app_icon/back.png" alt="logo" style="width:30px;"/>
+            </button>
+        </ion-buttons> 
+    </ion-toolbar>  
+  </ion-header>
+
+<ion-content padding10 class="">
+  <div padding>
+        <!-- -----------FileName-------- -->
+        <div text-center>
+            <p text-uppercase class="fs14 fw500">file name</p>
+            <ion-input text-capitalize type="text" value="{{mainData.stl_file}}" placeholder="fileName1.jpg" class="border-black type" readonly></ion-input>
+        </div>
+        <!-- -----------FileName-------- -->
+        <!-- -----------TitleAndDescription-------- -->
+        <div>
+            <ion-row >
+                <p text-uppercase class="fs14 fw500 paraMar">title</p>
+                <ion-col col-12 >
+                    <ion-input type="text" placeholder="insert title" class=" border-black" [(ngModel)]="mainData.item_name"></ion-input>
+                </ion-col>
+            </ion-row>
+            <ion-row >
+                <!-- <ion-col col-3> -->
+                    <p text-uppercase class="fs14 fw500 paraMar">description</p>
+                <!-- </ion-col> -->
+                <ion-col col-12>
+                    <textarea [(ngModel)]="mainData.description" class="txtArea border-black"></textarea>
+                </ion-col>
+            </ion-row>
+        </div>
+        <!-- -----------TitleAndDescription-------- -->
+        <!-- -----------MateriaSelect-------- -->
+        <div text-center style="padding: 0px 45px 0px 45px;">
+            <p class="upcase">Choose Material</p>
+            <ion-item style="border:1px solid;">
+              <ion-label class="upcase">PLA</ion-label>
+              <ion-select [(ngModel)]="print.material_id" class="plaSelection">
+                <ion-option *ngFor="let data of materialListArray" Selected value="{{data.id}}">{{data.name}}</ion-option> 
+              </ion-select>
+            </ion-item>
+        </div>
+        <!-- -----------MateriaSelect-------- -->
+        <!-- -----------print settings-------- -->
+        <div text-center>
+            <p text-uppercase class="fs16 fw500 textTheme">print settings</p>
+        </div>
+        <div text-center>
+            <div>
+                <ion-grid>
+                    <!-- 1 -->
+                    <ion-row >
+                        <ion-col col-5 text-left>
+                            <p text-uppercase class="fs10 fw500">Layer thickness</p>
+                        </ion-col>
+                        <ion-col col-7 text-right style="display: inline-flex;">
+                            <ion-row>
+                                <ion-col col-2>
+                                    <button ion-button (click)="PrintDecress('layer_thickness')" icon-only class="minus_icon iconPos" style="margin:auto;">
+                                        <ion-icon name="remove"></ion-icon>
+                                    </button>
+                                </ion-col>
+                                <ion-col col-5>
+                                    <ion-input type="text" [(ngModel)]="print.layer_thickness"  class="input_css" style="margin:auto;" readonly></ion-input>
+                                </ion-col>
+                                <ion-col col-3 text-left>
+                                    <span class="fs10 fw500 position">(mm)</span>
+                                </ion-col>
+                                <ion-col col-2>
+                                    <button (click)="PrintIncress('layer_thickness')" ion-button icon-only class="add_icon iconPos" style="margin:auto;">
+                                        <ion-icon name="add"></ion-icon>
+                                    </button>
+                                </ion-col>
+                            </ion-row>
+                        </ion-col>
+                    </ion-row>
+                    <!-- 2 -->
+                    <ion-row>
+                        <ion-col col-5 text-left>
+                            <p text-uppercase class="fs10 fw500">exposure time</p>
+                        </ion-col>
+                        <ion-col col-7 text-right style="display: inline-flex;">
+                            <ion-row>
+                                <ion-col col-2>
+                                    <button ion-button (click)="PrintDecress('exposure_time')" icon-only class="minus_icon iconPos" style="margin:auto;">
+                                        <ion-icon name="remove"></ion-icon>
+                                    </button>
+                                </ion-col>
+                                <ion-col col-5>
+                                    <ion-input type="text" [(ngModel)]="print.exposure_time" class="input_css" style="margin:auto;" readonly></ion-input>
+                                </ion-col>
+                                <ion-col col-3 text-left>
+                                    <span class="fs10 fw500 position">(ms)</span>
+                                </ion-col>
+                                <ion-col col-2>
+                                    <button ion-button (click)="PrintIncress('exposure_time')" icon-only class="add_icon iconPos" style="margin:auto;">
+                                        <ion-icon name="add"></ion-icon>
+                                    </button>
+                                </ion-col>
+                            </ion-row>
+                        </ion-col>
+                    </ion-row>
+                    <!-- 3 -->
+                    <ion-row>
+                        <ion-col col-5 text-left>
+                            <p text-uppercase class="fs10 fw500">off time</p>
+                        </ion-col>
+                        <ion-col col-7 text-right style="display: inline-flex;">
+                            <ion-row>
+                                <ion-col col-2>
+                                    <button ion-button (click)="PrintDecress('off_time')" icon-only class="minus_icon iconPos" style="margin:auto;">
+                                        <ion-icon name="remove"></ion-icon>
+                                    </button>
+                                </ion-col>
+                                <ion-col col-5>
+                                    <ion-input type="text" [(ngModel)]="print.off_time" class="input_css" style="margin:auto;" readonly></ion-input>
+                                </ion-col>
+                                <ion-col col-3 text-left>
+                                    <span class="fs10 fw500 position">(ms)</span>
+                                </ion-col>
+                                <ion-col col-2>
+                                    <button ion-button (click)="PrintIncress('off_time')" icon-only class="add_icon iconPos" style="margin:auto;">
+                                        <ion-icon name="add"></ion-icon>
+                                    </button>
+                                </ion-col>
+                            </ion-row>
+                        </ion-col>
+                    </ion-row>
+                    <!-- 4 -->
+                    <ion-row>
+                        <ion-col col-5 text-left>
+                            <p text-uppercase class="fs10 fw500">bottom exposure time</p>
+                        </ion-col>
+                        <ion-col col-7 text-right style="display: inline-flex;">
+                            <ion-row>
+                                <ion-col col-2>
+                                    <button ion-button (click)="PrintDecress('bottom_exposure_time')" icon-only class="minus_icon iconPos" style="margin:auto;">
+                                        <ion-icon name="remove"></ion-icon>
+                                    </button>
+                                </ion-col>
+                                <ion-col col-5>
+                                    <ion-input type="text" [(ngModel)]="print.bottom_exposure_time" class="input_css" style="margin:auto;" readonly></ion-input>
+                                </ion-col>
+                                <ion-col col-3 text-left>
+                                    <span class="fs10 fw500 position">(no)</span>
+                                </ion-col>
+                                <ion-col col-2>
+                                    <button ion-button (click)="PrintIncress('bottom_exposure_time')" icon-only class="add_icon iconPos" style="margin:auto;">
+                                        <ion-icon name="add"></ion-icon>
+                                    </button>
+                                </ion-col>
+                            </ion-row>
+                        </ion-col>
+                    </ion-row>
+                    <!-- 5 -->
+                    <ion-row>
+                        <ion-col col-5 text-left>
+                            <p text-uppercase class="fs10 fw500">bottom layers</p>
+                        </ion-col>
+                        <ion-col col-7 text-right style="display: inline-flex;">
+                            <ion-row>
+                                <ion-col col-2>
+                                    <button ion-button (click)="PrintDecress('bottom_layers')" icon-only class="minus_icon iconPos" style="margin:auto;">
+                                        <ion-icon name="remove"></ion-icon>
+                                    </button>
+                                </ion-col>
+                                <ion-col col-5>
+                                    <ion-input type="text" [(ngModel)]="print.bottom_layers" class="input_css" style="margin:auto;" readonly></ion-input>
+                                </ion-col>
+                                <ion-col col-3 text-left>
+                                    <span class="fs10 fw500 position">(min)</span>
+                                </ion-col>
+                                <ion-col col-2>
+                                    <button ion-button (click)="PrintIncress('bottom_layers')" icon-only class="add_icon iconPos" style="margin:auto;">
+                                        <ion-icon name="add"></ion-icon>
+                                    </button>
+                                </ion-col>
+                            </ion-row>
+                        </ion-col>
+                    </ion-row>
+                    <!-- 6 -->
+                    <ion-row >
+                        <ion-col col-5 text-left>
+                            <p text-uppercase class="fs10 fw500">post cure time</p>
+                        </ion-col>
+                        <ion-col col-7 text-right style="display: inline-flex;">
+                            <ion-row>
+                                <ion-col col-2>
+                                    <button ion-button (click)="PrintDecress('post_cure_time')" icon-only class="minus_icon iconPos" style="margin:auto;">
+                                        <ion-icon name="remove"></ion-icon>
+                                    </button>
+                                </ion-col>
+                                <ion-col col-5>
+                                    <ion-input type="text" [(ngModel)]="print.post_cure_time" class="input_css" style="margin:auto;" readonly></ion-input>
+                                </ion-col>
+                                <ion-col col-3 text-left>
+                                    <span class="fs10 fw500 position">(ms)</span>
+                                </ion-col>
+                                <ion-col col-2>
+                                    <button ion-button (click)="PrintIncress('post_cure_time')" icon-only class="add_icon iconPos" style="margin:auto;">
+                                        <ion-icon name="add"></ion-icon>
+                                    </button>
+                                </ion-col>
+                            </ion-row>
+                        </ion-col>
+                    </ion-row>
+                    <!-- 7 -->
+                    <ion-row >
+                        <ion-col col-5 text-left>
+                            <p text-uppercase class="fs10 fw500">lift and sequence time</p>
+                        </ion-col>
+                        <ion-col col-7 text-right style="display: inline-flex;">
+                            <ion-row>
+                                <ion-col col-2>
+                                    <button ion-button (click)="PrintDecress('lift_and_sequence_time')" icon-only class="minus_icon iconPos" style="margin:auto;">
+                                        <ion-icon name="remove"></ion-icon>
+                                    </button>
+                                </ion-col>
+                                <ion-col col-5>
+                                    <ion-input type="text" [(ngModel)]="print.lift_and_sequence_time" class="input_css" style="margin:auto;" readonly></ion-input>
+                                </ion-col>
+                                <ion-col col-3 text-left>
+                                    <span class="fs10 fw500 position">(no)</span>
+                                </ion-col>
+                                <ion-col col-2>
+                                    <button ion-button (click)="PrintIncress('lift_and_sequence_time')" icon-only class="add_icon iconPos" style="margin:auto;">
+                                        <ion-icon name="add"></ion-icon>
+                                    </button>
+                                </ion-col>
+                            </ion-row>
+                        </ion-col>
+                    </ion-row>
+                    <!-- button -->
+                    <ion-row class="mbot5">
+                        <ion-col col-6>
+                        </ion-col>
+                        <ion-col col-6 text-center>
+                            <button ion-button text-uppercase class="fs12 fw00 themColor border-black" style="height: 25px;" >
+                                autocomplete
+                            </button>
+                        </ion-col>
+                    </ion-row>
+                    <!-- 8 -->
+                    <ion-row>
+                        <ion-col col-5 text-left>
+                            <p text-uppercase class="fs10 fw500">z lift distance</p>
+                        </ion-col>
+                        <ion-col col-7 text-right style="display: inline-flex;">
+                            <ion-row>
+                                <ion-col col-2>
+                                    <button ion-button (click)="PrintDecress('z_lift_distance')" icon-only class="minus_icon iconPos" style="margin:auto;">
+                                        <ion-icon name="remove"></ion-icon>
+                                    </button>
+                                </ion-col>
+                                <ion-col col-5>
+                                    <ion-input type="text" [(ngModel)]="print.z_lift_distance" class="input_css" style="margin:auto;" readonly></ion-input>
+                                </ion-col>
+                                <ion-col col-3 text-left>
+                                    <span class="fs10 fw500 position">(no)</span>
+                                </ion-col>
+                                <ion-col col-2>
+                                    <button ion-button (click)="PrintIncress('z_lift_distance')" icon-only class="add_icon iconPos" style="margin:auto;">
+                                        <ion-icon name="add"></ion-icon>
+                                    </button>
+                                </ion-col>
+                            </ion-row>
+                        </ion-col>
+                    </ion-row>
+                    <!-- select  -->
+                    <ion-row>
+                        <ion-col col-6 text-left>
+                            <p text-uppercase class="fs12 fw500">build direction</p>
+                        </ion-col>
+                        <ion-col col-6 text-right style="display: inline-flex;">
+                            <ion-select [(ngModel)]="print.build_direction" class="fw500 buildSelect ionselectClass">
+                                <ion-option value="Bottom Up" selected>Bottom Up</ion-option>
+                                <ion-option value="Up Bottom">Up to Bottom</ion-option>
+                            </ion-select>
+                        </ion-col>
+                    </ion-row>
+                    <!-- 9 -->
+                    <ion-row>
+                        <ion-col col-5 text-left>
+                            <p text-uppercase class="fs10 fw500">Z lift speed</p>
+                        </ion-col>
+                        <ion-col col-7 text-right style="display: inline-flex;">
+                            <ion-row>
+                                <ion-col col-2>
+                                    <button ion-button (click)="PrintDecress('z_lift_speed')" icon-only class="minus_icon iconPos" style="margin:auto;">
+                                        <ion-icon name="remove"></ion-icon>
+                                    </button>
+                                </ion-col>
+                                <ion-col col-5>
+                                    <ion-input readonly type="text" [(ngModel)]="print.z_lift_speed" class="input_css" style="margin:auto;"></ion-input>
+                                </ion-col>
+                                <ion-col col-3 text-left>
+                                    <span class="fs10 fw500 position">(mm/sec)</span>
+                                </ion-col>
+                                <ion-col col-2>
+                                    <button ion-button (click)="PrintIncress('z_lift_speed')" icon-only class="add_icon iconPos" style="margin:auto;">
+                                        <ion-icon name="add"></ion-icon>
+                                    </button>
+                                </ion-col>
+                            </ion-row>
+                        </ion-col>
+                    </ion-row>
+                    <!-- 9 -->
+                    <ion-row>
+                        <ion-col col-5 text-left>
+                            <p text-uppercase class="fs10 fw500">z bottom speed</p>
+                        </ion-col>
+                        <ion-col col-7 text-right style="display: inline-flex;">
+                            <ion-row>
+                                <ion-col col-2>
+                                    <button ion-button (click)="PrintDecress('z_bottom_speed')" icon-only class="minus_icon iconPos" style="margin:auto;">
+                                        <ion-icon name="remove"></ion-icon>
+                                    </button>
+                                </ion-col>
+                                <ion-col col-5>
+                                    <ion-input readonly type="text" [(ngModel)]="print.z_bottom_speed" class="input_css" style="margin:auto;"></ion-input>
+                                </ion-col>
+                                <ion-col col-3 text-left>
+                                    <span class="fs10 fw500 position">(mm/sec)</span>
+                                </ion-col>
+                                <ion-col col-2>
+                                    <button ion-button (click)="PrintIncress('z_bottom_speed')" icon-only class="add_icon iconPos" style="margin:auto;">
+                                        <ion-icon name="add"></ion-icon>
+                                    </button>
+                                </ion-col>
+                            </ion-row>
+                        </ion-col>
+                    </ion-row>
+                    <!-- 10 -->
+                    <ion-row>
+                        <ion-col col-5 text-left>
+                            <p text-uppercase class="fs10 fw500">z lift retract speed</p>
+                        </ion-col>
+                        <ion-col col-7 text-right style="display: inline-flex;">
+                            <ion-row>
+                                <ion-col col-2>
+                                    <button ion-button (click)="PrintDecress('z_bottom_retract_speed')" icon-only class="minus_icon iconPos" style="margin:auto;">
+                                        <ion-icon name="remove"></ion-icon>
+                                    </button>
+                                </ion-col>
+                                <ion-col col-5>
+                                    <ion-input readonly type="text" [(ngModel)]="print.z_bottom_retract_speed" class="input_css" style="margin:auto;"></ion-input>
+                                </ion-col>
+                                <ion-col col-3 text-left>
+                                    <span class="fs10 fw500 position">(mm/sec)</span>
+                                </ion-col>
+                                <ion-col col-2>
+                                    <button ion-button (click)="PrintIncress('z_bottom_retract_speed')" icon-only class="add_icon iconPos" style="margin:auto;">
+                                        <ion-icon name="add"></ion-icon>
+                                    </button>
+                                </ion-col>
+                            </ion-row>
+                        </ion-col>
+                    </ion-row>
+                    <!-- 11 -->
+                    <ion-row>
+                        <ion-col col-5 text-left>
+                            <p text-uppercase class="fs10 fw500">slide tilt value</p>
+                        </ion-col>
+                        <ion-col col-7 text-right style="display: inline-flex;">
+                            <ion-row>
+                                <ion-col col-2>
+                                    <button ion-button (click)="PrintDecress('slide_tilt')" icon-only class="minus_icon iconPos" style="margin:auto;">
+                                        <ion-icon name="remove"></ion-icon>
+                                    </button>
+                                </ion-col>
+                                <ion-col col-5>
+                                    <ion-input readonly type="text" [(ngModel)]="print.slide_tilt" class="input_css" style="margin:auto;"></ion-input>
+                                </ion-col>
+                                <ion-col col-3 text-left>
+                                    <span class="fs10 fw500 position">(mm)</span>
+                                </ion-col>
+                                <ion-col col-2>
+                                    <button ion-button (click)="PrintIncress('slide_tilt')" icon-only class="add_icon iconPos" style="margin:auto;">
+                                        <ion-icon name="add"></ion-icon>
+                                    </button>
+                                </ion-col>
+                            </ion-row>
+                        </ion-col>
+                    </ion-row>
+                    <!-- 12 -->
+                    <ion-row>
+                        <ion-col col-5 text-left>
+                            <p text-uppercase class="fs10 fw500">reflect x</p>
+                        </ion-col>
+                        <ion-col col-7 text-right style="display: inline-flex;">
+                            <ion-row>
+                                <ion-col col-2>
+                                    <button ion-button (click)="PrintDecress('reflect_x')" icon-only class="minus_icon iconPos" style="margin:auto;">
+                                        <ion-icon name="remove"></ion-icon>
+                                    </button>
+                                </ion-col>
+                                <ion-col col-5>
+                                    <ion-input readonly type="text" [(ngModel)]="print.reflect_x" class="input_css" style="margin:auto;"></ion-input>
+                                </ion-col>
+                                <ion-col col-3 text-left>
+                                    <span class="fs10 fw500 position">(no)</span>
+                                </ion-col>
+                                <ion-col col-2>
+                                    <button ion-button (click)="PrintIncress('reflect_x')" icon-only class="add_icon iconPos" style="margin:auto;">
+                                        <ion-icon name="add"></ion-icon>
+                                    </button>
+                                </ion-col>
+                            </ion-row>
+                        </ion-col>
+                    </ion-row>
+                     <!-- 12 -->
+                     <ion-row>
+                        <ion-col col-5 text-left>
+                            <p text-uppercase class="fs10 fw500">reflect y</p>
+                        </ion-col>
+                        <ion-col col-7 text-right style="display: inline-flex;">
+                            <ion-row>
+                                <ion-col col-2>
+                                    <button ion-button (click)="PrintDecress('reflect_y')" icon-only class="minus_icon iconPos" style="margin:auto;">
+                                        <ion-icon name="remove"></ion-icon>
+                                    </button>
+                                </ion-col>
+                                <ion-col col-5>
+                                    <ion-input readonly type="text" [(ngModel)]="print.reflect_y" class="input_css" style="margin:auto;"></ion-input>
+                                </ion-col>
+                                <ion-col col-3 text-left>
+                                    <span class="fs10 fw500 position">(no)</span>
+                                </ion-col>
+                                <ion-col col-2>
+                                    <button ion-button (click)="PrintIncress('reflect_y')" icon-only class="add_icon iconPos" style="margin:auto;">
+                                        <ion-icon name="add"></ion-icon>
+                                    </button>
+                                </ion-col>
+                            </ion-row>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </div>
+        </div>
+        <!-- -----------print settings-------- -->
+        
+        <!-- ----------slicing settings---------- -->
+        <div text-center>
+            <p text-uppercase class="fs16 fw500 textTheme">slicing settings</p>
+        </div>
+        <div text-center>
+            <div>
+                <ion-grid>
+                    <!-- 1 Redio-->
+                    <ion-row>
+                        <ion-col col-5 text-left>
+                            <p text-uppercase class="fs10 fw500">enable slicing outlines</p>
+                        </ion-col>
+                        <ion-col col-7 text-center style="display: inline-flex;">
+                            <ion-row style="width: 100%;">
+                                <ion-col col-6>
+                                    <span text-uppercase class="fs10 fw500 lh3">yes</span>
+                                    <ion-radio checked="{{enable_slicing_outlineArray.yes}}"  (click)="enable_slicing_outlineArrayValueSet('1')" class="radioCss"></ion-radio>
+                                </ion-col>
+                                <ion-col col-6>
+                                    <span text-uppercase class="fs10 fw500 lh3">no</span>
+                                    <ion-radio checked="{{enable_slicing_outlineArray.no}}"  (click)="enable_slicing_outlineArrayValueSet('0')" class="radioCss"></ion-radio>
+                                </ion-col>
+                            </ion-row>
+                        </ion-col>
+                    </ion-row>
+                    <!-- label -->
+                    <div text-start text-uppercase class="fs12 fw700 mbot10">
+                        infill
+                    </div>
+                    <!-- 2.2 -->
+                    <ion-row>
+                        <ion-col col-5 text-left>
+                            <p text-uppercase class="fs10 fw500">infill density</p>
+                        </ion-col>
+                        <ion-col col-7 text-right style="display: inline-flex;">
+                            <ion-row>
+                                <ion-col col-2>
+                                    <button ion-button (click)="slicingDecree('infill_density')" icon-only class="minus_icon iconPos" style="margin:auto;">
+                                        <ion-icon name="remove"></ion-icon>
+                                    </button>
+                                </ion-col>
+                                <ion-col col-5>
+                                    <ion-input readonly type="text" [(ngModel)]="slicing.infill_density" class="input_css" style="margin:auto;"></ion-input>
+                                </ion-col>
+                                <ion-col col-3 text-left>
+                                    <span class="fs10 fw500 position">(%)</span>
+                                </ion-col>
+                                <ion-col col-2>
+                                    <button ion-button (click)="slicingIncree('infill_density')" icon-only class="add_icon iconPos" style="margin:auto;">
+                                        <ion-icon name="add"></ion-icon>
+                                    </button>
+                                </ion-col>
+                            </ion-row>
+                        </ion-col>
+                    </ion-row>
+                    <!-- 3.2 -->
+                    <ion-row>
+                        <ion-col col-5 text-left>
+                            <p text-uppercase class="fs10 fw500">infill line distance</p>
+                        </ion-col>
+                        <ion-col col-7 text-right style="display: inline-flex;">
+                            <ion-row>
+                                <ion-col col-2>
+                                    <button ion-button (click)="slicingDecree('infill_line_distance')" icon-only class="minus_icon iconPos" style="margin:auto;">
+                                        <ion-icon name="remove"></ion-icon>
+                                    </button>
+                                </ion-col>
+                                <ion-col col-5>
+                                    <ion-input readonly type="text" [(ngModel)]="slicing.infill_line_distance" class="input_css" style="margin:auto;"></ion-input>
+                                </ion-col>
+                                <ion-col col-3 text-left>
+                                    <span class="fs10 fw500 position">(mm)</span>
+                                </ion-col>
+                                <ion-col col-2>
+                                    <button ion-button (click)="slicingIncree('infill_line_distance')" icon-only class="add_icon iconPos" style="margin:auto;">
+                                        <ion-icon name="add"></ion-icon>
+                                    </button>
+                                </ion-col>
+                            </ion-row>
+                        </ion-col>
+                    </ion-row>
+                    <!-- 4.2 -->
+                    <ion-row>
+                        <ion-col col-5 text-left>
+                            <p text-uppercase class="fs10 fw500">infill overlap percentage</p>
+                        </ion-col>
+                        <ion-col col-7 text-right style="display: inline-flex;">
+                            <ion-row>
+                                <ion-col col-2>
+                                    <button ion-button (click)="slicingDecree('infill_overlap_percentage')" icon-only class="minus_icon iconPos" style="margin:auto;">
+                                        <ion-icon name="remove"></ion-icon>
+                                    </button>
+                                </ion-col>
+                                <ion-col col-5>
+                                    <ion-input readonly type="text" [(ngModel)]="slicing.infill_overlap_percentage" class="input_css" style="margin:auto;"></ion-input>
+                                </ion-col>
+                                <ion-col col-3 text-left>
+                                    <span class="fs10 fw500 position">(%)</span>
+                                </ion-col>
+                                <ion-col col-2>
+                                    <button ion-button (click)="slicingIncree('infill_overlap_percentage')" icon-only class="add_icon iconPos" style="margin:auto;">
+                                        <ion-icon name="add"></ion-icon>
+                                    </button>
+                                </ion-col>
+                            </ion-row>
+                        </ion-col>
+                    </ion-row>
+                    <!-- 5.2 -->
+                    <ion-row>
+                        <ion-col col-5 text-left>
+                            <p text-uppercase class="fs10 fw500">infill layer thickness</p>
+                        </ion-col>
+                        <ion-col col-7 text-right style="display: inline-flex;">
+                            <ion-row>
+                                <ion-col col-2>
+                                    <button ion-button (click)="slicingDecree('infill_layer_thickness')" icon-only class="minus_icon iconPos" style="margin:auto;">
+                                        <ion-icon name="remove"></ion-icon>
+                                    </button>
+                                </ion-col>
+                                <ion-col col-5>
+                                    <ion-input readonly type="text" [(ngModel)]="slicing.infill_layer_thickness" class="input_css" style="margin:auto;"></ion-input>
+                                </ion-col>
+                                <ion-col col-3 text-left>
+                                    <span class="fs10 fw500 position">(mm)</span>
+                                </ion-col>
+                                <ion-col col-2>
+                                    <button ion-button (click)="slicingIncree('infill_layer_thickness')" icon-only class="add_icon iconPos" style="margin:auto;">
+                                        <ion-icon name="add"></ion-icon>
+                                    </button>
+                                </ion-col>
+                            </ion-row>
+                        </ion-col>
+                    </ion-row>
+                    <!-- select  -->
+                    <ion-row>
+                        <ion-col col-5 text-left>
+                            <p text-uppercase class="fs12 fw500">infill pattern</p>
+                        </ion-col>
+                        <ion-col col-7 text-right style="display: inline-flex;">
+                            <ion-select [(ngModel)]="slicing.infill_pattern" class="fw500 buildSelect ionselectClass">
+                                <ion-option value="Grid">Grid</ion-option>
+                                <ion-option value="Lines">Lines</ion-option>
+                                <ion-option value="Triangles">Triangles</ion-option>
+                                <ion-option value="Cubic">Cubic</ion-option>
+                                <ion-option value="Trihexadone">Tri-hexadone</ion-option>
+                                <ion-option value="Concentric">Concentric</ion-option>
+                                <ion-option value="Zigzag">Zigzag</ion-option>
+                                <ion-option value="Cross">Cross</ion-option>
+                            </ion-select>
+                        </ion-col>
+                    </ion-row>
+                    <!-- label -->
+                    <div text-start text-uppercase margin-top class="fs12 fw700 mbot10">
+                        support generation
+                    </div>
+                    <!-- 2.2 redio-->
+                    <ion-row>
+                        <ion-col col-5 text-left>
+                            <p text-uppercase class="fs10 fw500">generate support</p>
+                        </ion-col>
+                        <ion-col col-7 text-center style="display: inline-flex;">
+                            <ion-row style="width: 100%;">
+                                <ion-col col-6>
+                                    <span text-uppercase class="fs10 fw500 lh3">yes</span>
+                                    <ion-radio checked="{{generate_supportArray.yes}}"  (click)="generate_supportArrayValueSet('1')" class="radioCss"></ion-radio>
+                                </ion-col>
+                                <ion-col col-6>
+                                    <span text-uppercase class="fs10 fw500 lh3">no</span>
+                                    <ion-radio checked="{{generate_supportArray.no}}"  (click)="generate_supportArrayValueSet('1')" class="radioCss"></ion-radio>
+                                </ion-col>
+                            </ion-row>
+                        </ion-col>
+                    </ion-row>
+                    <!-- 3.2 -->
+                    <ion-row class="mbot3 mtop3">
+                        <ion-col col-5 text-left>
+                            <p text-uppercase class="fs10 fw500">support placement</p>
+                        </ion-col>
+                        <ion-col col-7 text-right style="display: inline-flex;">
+                            <ion-select [(ngModel)]="slicing.support_placement" class="fw500 buildSelect ionselectClass">
+                                <ion-option value="Touching Build Plate" selected>Touching Build Plate</ion-option>
+                                <ion-option value="Lines">Lines</ion-option>
+                            </ion-select>
+                        </ion-col>
+                    </ion-row>
+                    <!-- 4.2 -->
+                    <ion-row >
+                        <ion-col col-5 text-left>
+                            <p text-uppercase class="fs10 fw500">support overhang angel</p>
+                        </ion-col>
+                        <ion-col col-7 text-right style="display: inline-flex;">
+                            <ion-row>
+                                <ion-col col-2>
+                                    <button ion-button (click)="slicingDecree('support_overhang_angle')" icon-only class="minus_icon iconPos" style="margin:auto;">
+                                        <ion-icon name="remove"></ion-icon>
+                                    </button>
+                                </ion-col>
+                                <ion-col col-5>
+                                    <ion-input readonly type="text" [(ngModel)]="slicing.support_overhang_angle" class="input_css" style="margin:auto;"></ion-input>
+                                </ion-col>
+                                <ion-col col-3 text-left>
+                                    <span class="fs10 fw500 position">(%)</span>
+                                </ion-col>
+                                <ion-col col-2>
+                                    <button ion-button (click)="slicingIncree('support_overhang_angle')" icon-only class="add_icon iconPos" style="margin:auto;">
+                                        <ion-icon name="add"></ion-icon>
+                                    </button>
+                                </ion-col>
+                            </ion-row>
+                        </ion-col>
+                    </ion-row>
+                    <!-- 5.2 -->
+                    <ion-row class="mbot3 mtop3">
+                        <ion-col col-5 text-left>
+                            <p text-uppercase class="fs10 fw500">support pattern</p>
+                        </ion-col>
+                        <ion-col col-7 text-right style="display: inline-flex;">
+                            <ion-select [(ngModel)]="slicing.support_pattern" class="fw500 buildSelect ionselectClass">
+                                    <ion-option value="Grid">Grid</ion-option>
+                                    <ion-option value="lines">Lines</ion-option>
+                                    <ion-option value="Triangles">Triangles</ion-option>
+                                    <ion-option value="Cubic">Cubic</ion-option>
+                                    <ion-option value="Trihexadone">Tri-hexadone</ion-option>
+                                    <ion-option value="Concentric">Concentric</ion-option>
+                                    <ion-option value="Lines">Zigzag</ion-option>
+                                    <ion-option value="Cross">Cross</ion-option>
+                            </ion-select>
+                        </ion-col>
+                    </ion-row>
+                    <!-- 5.2 -->
+                    <ion-row >
+                        <ion-col col-5 text-left>
+                            <p text-uppercase class="fs10 fw500">support density</p>
+                        </ion-col>
+                        <ion-col col-7 text-right style="display: inline-flex;">
+                            <ion-row>
+                                <ion-col col-2>
+                                    <button ion-button (click)="slicingDecree('support_density')" icon-only class="minus_icon iconPos" style="margin:auto;">
+                                        <ion-icon name="remove"></ion-icon>
+                                    </button>
+                                </ion-col>
+                                <ion-col col-5>
+                                    <ion-input readonly type="text" [(ngModel)]="slicing.support_density" class="input_css" style="margin:auto;"></ion-input>
+                                </ion-col>
+                                <ion-col col-3 text-left>
+                                    <span class="fs10 fw500 position">(mm)</span>
+                                </ion-col>
+                                <ion-col col-2>
+                                    <button ion-button (click)="slicingIncree('support_density')" icon-only class="add_icon iconPos" style="margin:auto;">
+                                        <ion-icon name="add"></ion-icon>
+                                    </button>
+                                </ion-col>
+                            </ion-row>
+                        </ion-col>
+                    </ion-row>
+                    <!-- 9 -->
+                    <ion-row>
+                        <ion-col col-5 text-left>
+                            <p text-uppercase class="fs10 fw500">support horizontal expansion</p>
+                        </ion-col>
+                        <ion-col col-7 text-right style="display: inline-flex;">
+                            <ion-row>
+                                <ion-col col-2>
+                                    <button ion-button (click)="slicingDecree('support_horizontal_expansion')" icon-only class="minus_icon iconPos" style="margin:auto;">
+                                        <ion-icon name="remove"></ion-icon>
+                                    </button>
+                                </ion-col>
+                                <ion-col col-5>
+                                    <ion-input readonly type="text" [(ngModel)]="slicing.support_horizontal_expansion" class="input_css" style="margin:auto;"></ion-input>
+                                </ion-col>
+                                <ion-col col-3 text-left>
+                                    <span class="fs10 fw500 position">(mm)</span>
+                                </ion-col>
+                                <ion-col col-2>
+                                    <button ion-button (click)="slicingIncree('support_horizontal_expansion')" icon-only class="add_icon iconPos" style="margin:auto;">
+                                        <ion-icon name="add"></ion-icon>
+                                    </button>
+                                </ion-col>
+                            </ion-row>
+                        </ion-col>
+                    </ion-row>
+                    <!-- 10 -->
+                    <ion-row>
+                        <ion-col col-5 text-left>
+                            <p text-uppercase class="fs10 fw500">support infill layer thickness</p>
+                        </ion-col>
+                        <ion-col col-7 text-right style="display: inline-flex;">
+                            <ion-row>
+                                <ion-col col-2>
+                                    <button ion-button (click)="slicingDecree('support_infill_layer_thickness')" icon-only class="minus_icon iconPos" style="margin:auto;">
+                                        <ion-icon name="remove"></ion-icon>
+                                    </button>
+                                </ion-col>
+                                <ion-col col-5>
+                                    <ion-input readonly type="text" [(ngModel)]="slicing.support_infill_layer_thickness" class="input_css" style="margin:auto;"></ion-input>
+                                </ion-col>
+                                <ion-col col-3 text-left>
+                                    <span class="fs10 fw500 position">(mm)</span>
+                                </ion-col>
+                                <ion-col col-2>
+                                    <button ion-button (click)="slicingIncree('support_infill_layer_thickness')" icon-only class="add_icon iconPos" style="margin:auto;">
+                                        <ion-icon name="add"></ion-icon>
+                                    </button>
+                                </ion-col>
+                            </ion-row>
+                        </ion-col>
+                    </ion-row>
+                    <!-- 11 -->
+                    <ion-row>
+                        <ion-col col-5 text-left>
+                            <p text-uppercase class="fs10 fw500">gradual support infill steps</p>
+                        </ion-col>
+                        <ion-col col-7 text-right style="display: inline-flex;">
+                            <ion-row>
+                                <ion-col col-2>
+                                    <button ion-button (click)="slicingDecree('gradual_support_infill_steps')" icon-only class="minus_icon iconPos" style="margin:auto;">
+                                        <ion-icon name="remove"></ion-icon>
+                                    </button>
+                                </ion-col>
+                                <ion-col col-5>
+                                    <ion-input readonly type="text" [(ngModel)]="slicing.gradual_support_infill_steps" class="input_css" style="margin:auto;"></ion-input>
+                                </ion-col>
+                                <ion-col col-3 text-left>
+                                    <span class="fs10 fw500 position">(#)</span>
+                                </ion-col>
+                                <ion-col col-2>
+                                    <button ion-button (click)="slicingIncree('gradual_support_infill_steps')" icon-only class="add_icon iconPos" style="margin:auto;">
+                                        <ion-icon name="add"></ion-icon>
+                                    </button>
+                                </ion-col>
+                            </ion-row>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </div>
+        </div>
+        <!-- ----------slicing settings---------- -->
+
+        <!-- button -->
+        <ion-row>
+            <ion-col col-12 text-center>
+                <button ion-button text-uppercase (click)="save()" class="fs14 fw00 themColor border-black" style="width: 50%;">
+                    save
+                </button>
+            </ion-col>
+        </ion-row>
+  </div>
+</ion-content>

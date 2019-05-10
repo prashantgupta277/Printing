@@ -1,0 +1,99 @@
+
+<ion-header no-border>
+  <ion-toolbar transparent class="themColor white">
+      <button ion-button menuToggle >
+        <ion-icon name="menu" class="white"></ion-icon>
+      </button>
+      <ion-title>
+        <div text-center style="margin-left: 38px;">
+          <img src="/assets/icon/logo_alex.png" alt="logo" style="width:120px;"/>
+        </div>
+      </ion-title>
+      <ion-buttons end>
+          <button style="background:transparent;" (click)="back()">
+              <img src="/assets/icon/app_icon/back.png" alt="logo" style="width:30px;"/>
+          </button>
+      </ion-buttons> 
+  </ion-toolbar>  
+</ion-header>
+
+<ion-content>
+  <div>
+    <div text-center class="">
+        <h3 class="textColor" (click)='Gocart()'>Cart</h3>
+    </div>
+    
+    <ion-grid no-padding>
+      <ion-row>
+        <!-- <ion-col col-6 no-padding>
+          <ion-card >
+            <img src="/assets/imgs/hercul.jpg" alt="logo" style="height:70%;" (click)="subCat()"/>
+            <div class="opctyDiv">
+              <h2 class="opctyText">Category</h2>
+            </div>
+            <div class="iconDiv">
+              <ion-row>
+                <ion-col col-6>
+                  <div>
+                      <p>Price</p>
+                      <ion-icon name="close" class="iconClass" (click)="Delete()"></ion-icon>
+                  </div>
+                </ion-col>
+                <ion-col col-6 >
+                  
+                </ion-col>
+              </ion-row>
+            </div>
+          </ion-card>
+        </ion-col> -->
+        <ion-col col-6 no-padding *ngFor="let item of cartData">
+          <ion-card>
+            <img src="{{imgUrl}}{{item.image}}" alt="logo" style="height: 70%;" (click)="subCat()"/>
+            <div class="opctyDiv">
+              <h2 class="opctyText">{{item.name}}</h2>
+            </div>
+            <div class="iconDiv">
+              <ion-row>
+                <ion-col col-6 style="padding: 1px;">
+                  <div>
+                    <p>Price: {{item.price}} ₹</p>
+                    <ion-row>
+                      <ion-col col-4 class="padding0">
+                          <ion-icon name="arrow-dropleft" class="iconClass"(click)="QutyDecress(item,item.cart_id)"></ion-icon>
+                      </ion-col>
+                      <ion-col col-4 text-left class="padding0">
+                      <span class="textColor">{{item.qty}}</span>
+                      </ion-col>
+                      <ion-col col-4 class="padding0">
+                          <ion-icon name="arrow-dropright" class="iconClass" (click)="QutyIncree(item,item.cart_id)"></ion-icon>
+                      </ion-col>
+                    </ion-row>
+                  </div>
+                </ion-col>
+                <ion-col col-6 style="padding: 1px;">
+                  <div class="secondRow" style="padding-top: 20px;" (click)="Delete(item.cart_id)">
+                      <ion-icon name="close" class="iconClass"></ion-icon>
+                  </div>
+                </ion-col>
+              </ion-row>
+            </div>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <div text-center >
+        <h3 class="textColor">SubTotal</h3>
+        <div style="padding: 10px 50px 5px 50px;">
+            <div class="borddrBot textColor fs16 fw600">{{totalAmount}} ₹</div>
+        </div>
+    </div>
+    <div text-center class="mtop10">
+        <span class="textColor fs14">lorem ipsum</span><br>
+        <span class="textColor fs14">lorem ipsum</span><br>
+        <span class="textColor fs20">lorem ipsum</span>
+    </div>
+    <div text-center class="rowHeight">
+        <button class="themColor DiscoverButton" (click)="goPayment()">Proceed to Payment</button>
+      </div>
+  </div>
+</ion-content>

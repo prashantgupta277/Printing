@@ -1,0 +1,57 @@
+page-myOrder {
+    .DiscoverButton{
+        width: 90% !important;
+        height: 25px !important;
+        color: white !important;
+        font-weight: 600 !important;
+        font-size: 15px !important;
+        border-radius: 5px !important;
+        border: 1px solid #000000 !important;
+        text-transform: uppercase !important;
+        margin-bottom: 25px !important;
+        margin-top: 10px !important;
+    }
+    .iconClass{
+        position: absolute !important;
+        right: 0px !important;
+        top:0px !important;
+    }
+    .cardShipping{
+        padding: 10px !important;
+        padding-top: 18px !important;
+    }
+    .rowBorder{
+        border-bottom: 1px solid #c8c7cc !important;
+    }
+    .freeShipingButton{
+        width: 81% !important;
+        height: 30px !important;
+        background-color: #70a22e !important;
+    }
+    .checkOutButton{
+        width: 80% !important;
+        height: 35px !important;
+        background-color: #70a22e !important;
+        text-transform: capitalize !important;
+    }
+    .amountColor{
+      color: #ef620b !important;
+    }
+    .normalButton{
+        width: 80% !important;
+        height: 35px !important;
+        background: #ffff !important;
+       
+    }
+    .newRequest{
+        height: 40px !important;
+        background-color: #70a22e !important;
+        text-transform: uppercase  !important;
+        width: 75% !important;
+        font-size: 14px !important;
+    }
+    ion-card{
+        background: #f4f4f4 !important;
+    }
+
+}

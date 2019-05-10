@@ -1,0 +1,43 @@
+page-ProductReturnNew {
+    .sendButton{
+        width: 60% !important;
+        height: 45px !important;
+        color: white !important;
+        font-weight: 600 !important;
+        font-size: 20px !important;
+        border-radius: 5px !important;
+        border: 1px solid #000000 !important;
+        text-transform: uppercase !important;
+        margin-bottom: 20px !important;
+    }
+    .buttonDiv{
+        text-align: center !important;
+        width: 100% !important;
+        overflow: overlay !important;
+    }
+    .catLabel{
+        background: #ebebeb !important;
+        margin: 0 !important;
+        color: #0b7b94 !important;
+        border-radius: 5px !important;
+    }
+    .returnLbl{
+        border: 1px solid #000 !important; 
+        border-radius: 10px !important;
+        padding: 5px !important;
+    }
+    .txtArea{
+        border:1px solid #000 !important;
+        border-radius:10px !important;
+        height: 200px !important;
+        width: 100% !important;
+    }
+    .buttonPos{
+        position: absolute !important;
+        bottom: -44px !important;
+    }
+    .paraLbl{
+        margin: 0 !important;
+        color: #0b7b94 !important;
+    }
+}

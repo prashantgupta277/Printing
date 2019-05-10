@@ -1,0 +1,45 @@
+<ion-header>
+ 
+</ion-header>
+
+<ion-content padding class="themColor">
+  <div class="margin_top_15">
+    <div text-center>
+      <img src="/assets/icon/logo_alex.png" alt="3d printerlogo image" class="logo"/>
+    </div>
+    <div style="padding:50px;">
+
+      <ion-list class="text_center" >
+        <div class="inputDiv">
+            <ion-item class="backgroundTransparent borderRedi" style="height: 100%;">
+              <ion-input type="email" class="mleft10 mtop5" placeholder="Email" [(ngModel)]="userLogin.email"></ion-input>
+            </ion-item>
+            <ion-icon name="person" class="icon_img"></ion-icon>
+            <!-- <img src='assets/imgs/UserICon.png' class="icon_img"> -->
+        </div>
+        <div class="inputDiv">
+            <ion-item class="backgroundTransparent borderRedi" style="height: 100%;">
+              <ion-input color="dark" class="mleft10 mtop5" type="password" placeholder="Password" [(ngModel)]="userLogin.password"></ion-input>
+            </ion-item>
+            <ion-icon name="lock" class="icon_img"></ion-icon>
+            <!-- <img src='assets/imgs/SigninLock.png' > -->
+        </div>
+      </ion-list>
+      <div text-left>
+        <ion-label text-capitalize class="fs14 fw400 white"><ion-checkbox checked="true"></ion-checkbox> save credentials</ion-label>
+      </div>
+      <div class="mtop5">
+        <div class="textRight">
+          <p text-capitalize class="fw500 white" (click)="goForgot()">forgot Password?</p>
+        </div>
+        <div>
+          <button ion-button full text-capitalize class="login_button borderRedi" (click)="login()">log in</button>
+        </div>
+        <!-- <div text-center>
+          <p class="fs16 fw500 darkgray">New user? <span class="fs16 white font-bold">Signup</span></p>
+        </div> -->
+      </div>
+    </div>
+    
+  </div>
+</ion-content>

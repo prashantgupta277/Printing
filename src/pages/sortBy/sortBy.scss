@@ -1,0 +1,58 @@
+page-sortBy {
+
+    ion-modal {
+        ion-backdrop {
+          visibility: visible !important;
+          background-color: #0b7b94 !important;
+        }
+        .modal-wrapper {
+          display: block !important;
+          width: 100% !important;
+          height: 100% !important;
+          contain: strict !important;
+          border-radius: 10px !important;
+          position: absolute !important;
+          left: 0 !important;
+          top: 0 !important;
+          right: 0 !important;
+          bottom: 0 !important;
+          margin: auto !important;
+          box-shadow: 0 16px 20px rgba(0,0,0,.4) !important;
+          background-color: #fafafa !important;
+        }
+      }
+    .checkbox-margin{
+        margin: 9px 9px 9px 4px !important;
+    }
+    .item-inner {
+        padding-right: 8px;
+        border-bottom: none !important;
+    }
+    .text-webkit{
+        text-align: -webkit-center !important;
+    }
+    .text-center{
+        text-align: center !important;
+    }
+    .okButton{
+        width: 100px !important;
+        height: 30px !important;
+        border-radius: 5px !important;
+        color: #fff !important;
+        font-size: 18px !important;
+        text-transform: capitalize !important;
+    }
+    .posBot{
+        position: absolute !important;
+        width: 100% !important;
+        bottom: 30px !important;
+    }
+    .checkbox-md-primary .checkbox-checked {
+        border-color: #007a95 !important;
+        background-color: #007a95 !important;
+    }
+    .checkbox-ios-primary .checkbox-checked {
+        border-color: #007a95 !important;
+        background-color: #007a95 !important;
+    }
+}

@@ -1,0 +1,66 @@
+<!-- <ion-header no-border>
+  <ion-navbar transparent class="themColor white">
+    <button ion-button menuToggle>
+      <ion-icon name="menu" class="white"></ion-icon>
+    </button>
+    <div text-center>
+      <img src="/assets/icon/logo_alex.png" alt="logo" style="width:120px;"/>
+    </div>
+  </ion-navbar>
+</ion-header> -->
+
+<ion-header no-border>
+  <ion-toolbar transparent class="themColor white">
+      <button ion-button menuToggle >
+        <ion-icon name="menu" class="white"></ion-icon>
+      </button>
+      <ion-title>
+        <div text-center style="margin-left: 38px;">
+          <img src="/assets/icon/logo_alex.png" alt="logo" style="width:120px;"/>
+        </div>
+      </ion-title>
+      <ion-buttons end>
+          <button style="background:transparent;" (click)="back()">
+              <img src="/assets/icon/app_icon/back.png" alt="logo" style="width:30px;"/>
+          </button>
+      </ion-buttons> 
+  </ion-toolbar>  
+</ion-header>
+
+<ion-content padding>
+  <div >
+    <div text-center>
+      <img src="/assets/icon/chate.png" alt="logo Support" style="width: 25%;"/>
+        <p [innerHTML]="discription"></p>
+    </div>
+    
+    <div text-center style="margin: 10px 0px 20px 0px;" >
+        <p class="newRequest border-black" (click)="makeReq()" tappable>
+            <ion-icon name="text" class="white" style="margin-right: 5px;"></ion-icon>
+          make a new request
+        </p>
+      </div>
+    <div class="timeDiv mtop10per" *ngFor="let item of SupportDetails">
+        <div text-right>
+            <p class="fs12 fw500 black margin5px">{{item.date}}</p>
+            <p class="fs12 fw500 black margin2px">{{item.time}}</p>
+        </div>
+        <div text-start style="padding-left: 5px;">
+          <p text-uppercase class="fs14 fw500">{{item.title}}</p>
+        </div>
+        <div text-justify class="">
+          <p class="fs12 fw500" style="padding-left: 5px;">
+           {{item.message}}
+          </p>
+        </div>
+        <div text-start style="padding-left: 5px;">
+          <p text-uppercase class="fs12 fw500">Attachments : {{item.Filename}}</p>
+        </div>
+        <div class="posRelative mtop20">
+          <!-- //<button *ngIf="item.priduct_link !=''" ion-button class="answerButton butViewPos border-black">View Product</button> -->
+          <button ion-button class="answerButton butAnswerPos border-black">view</button>
+        </div>
+    </div>
+
+  </div>
+</ion-content>

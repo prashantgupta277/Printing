@@ -1,0 +1,65 @@
+page-support{
+    .iconClass{
+        position: absolute !important;
+        right: 0px !important;
+        top:0px !important;
+    }
+    .cardDesign{
+        padding: 15px !important;
+        border-radius: 10px !important;
+    }
+    .ReqCard{
+        background-color: #70a22e !important;
+        color: #ffff !important;
+    }
+    .textUper{
+        text-transform: uppercase !important;
+    }
+    .backCard{
+        background: #f4f4f4 !important;
+    }
+    .colback{
+        background: #ffff !important;
+        border: 3px solid #fafafa !important;
+    }
+    .priceCard{
+        height: 38px !important;
+        text-align: center !important;
+        padding-top: 6px !important;
+    }
+    .rowBorder{
+        border-bottom: 1px solid #c8c7cc !important;
+    }
+    .backImg{
+        height: 100px !important;
+        width: 100% !important;
+        background-image: url('../../assets/imgs/images.png') !important;
+        background-repeat: no-repeat !important;
+        background-attachment: fixed !important;
+        opacity: 0.7 !important;
+    }
+   
+    .NewRequestButton{
+        width: 170px !important;
+        height: 35px !important;
+        background-color: #70a22e !important;
+        text-transform: uppercase !important;
+        font-size: 14px !important;
+    }
+    .amountColor{
+      color: #ef620b !important;
+    }
+    .checkBox{
+        position: absolute !important;
+        right: 25px !important;
+        top: 8px !important;
+    }
+    .cardShadow{
+        box-shadow: 2px 7px 2px 2px #343434c4 !important;
+        border-radius: 20px !important;
+    }
+    .rowBorder{
+        border-bottom: 1px solid #dedede !important;
+    }
+
+}

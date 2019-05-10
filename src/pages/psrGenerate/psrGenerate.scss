@@ -1,0 +1,45 @@
+page-psrGenerate {
+    
+    .answerButton{
+        height: 30px !important;
+        background-color: #0b7b94 !important;
+        text-transform: uppercase !important;
+        width: 60% !important;
+        font-size: 12px !important;
+    }
+    .sendMsg{
+        height: 40px !important;
+        background-color: #0b7b94 !important;
+        text-transform: uppercase !important;
+        width: 60% !important;
+        font-size: 16px !important;
+    }
+    .txtArea{
+        width: 100% !important;
+        height: 200px !important;
+        border: 1px solid #000 !important;
+        border-radius: 5px !important;
+        resize: none !important;
+        padding: 10px !important;
+        text-transform: capitalize !important;
+    }
+    .inputCss{
+        border: 1px solid #000 !important;
+        border-radius: 5px !important;
+        height: 30px !important;
+        position: relative !important;
+        top: 5px !important;
+    }
+    .w20{
+        width: 20% !important;
+    }
+    .w80{
+        width: 80% !important;
+    }
+    .text-input {
+        margin: 5px 8px !important;
+        padding: 0;
+        width: calc(100% - 8px - 8px);
+    }
+    
+}

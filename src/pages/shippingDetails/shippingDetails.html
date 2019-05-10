@@ -1,0 +1,267 @@
+
+<ion-header no-border>
+  <ion-toolbar transparent class="themColor white">
+      <button ion-button menuToggle >
+        <ion-icon name="menu" class="white"></ion-icon>
+      </button>
+      <ion-title>
+        <div text-center style="margin-left: 38px;">
+            <img src="/assets/icon/logo_alex.png" alt="logo" style="width:120px;"/>
+        </div>
+    </ion-title>
+    <ion-buttons end >
+        <button style="background:transparent;" (click)="back()">
+            <img src="/assets/icon/app_icon/back.png" alt="logo" style="width:30px;"/>
+        </button>
+    </ion-buttons>  
+  </ion-toolbar>  
+</ion-header>
+
+<ion-content>
+  <div padding>
+    <div text-center>
+      <p text-uppercase class="fs20 fw500" style="margin-top: 0px;">
+        Settings
+      </p>
+    </div>
+    <ion-grid class="borderDiv ">
+      <div text-start text-uppercase class="fs16 fw500 marginTopLeft">
+        User Details
+      </div>
+      <ion-row>
+        <ion-col col-4>
+            <ion-label fixed text-uppercase class="fs10 fw600">Name:</ion-label>
+        </ion-col>
+        <ion-col col-8>
+            <ion-input type="text" value="{{UserName}}" class="input_css" readonly></ion-input>
+        </ion-col>
+      </ion-row>
+      <!--  -->
+      <ion-row class="mtop_minus15px">
+        <ion-col col-4>
+              <ion-label fixed text-uppercase class="fs10 fw600">Surname:</ion-label>
+        </ion-col>
+        <ion-col col-8>
+            <ion-input type="text" value="{{UserSurname}}" class="input_css" readonly></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row class="mtop_minus15px">
+          <ion-col col-4>
+                <ion-label fixed text-uppercase class="fs10 fw600">Email:</ion-label>
+          </ion-col>
+          <ion-col col-8>
+              <ion-input type="text" value="{{Address}}" class="input_css" readonly></ion-input>
+          </ion-col>
+      </ion-row>
+      <ion-row class="mtop_minus15px">
+          <ion-col col-4>
+                <ion-label fixed text-uppercase class="fs10 fw600">city:</ion-label>
+          </ion-col>
+          <ion-col col-8>
+              <ion-input type="text" value="{{city}}" class="input_css" readonly></ion-input>
+          </ion-col>
+      </ion-row>
+      <ion-row class="mtop_minus15px">
+          <ion-col col-4>
+                <ion-label fixed text-uppercase class="fs10 fw600">ZIP CODE:</ion-label>
+          </ion-col>
+          <ion-col col-8>
+              <ion-input type="text" value="{{zipCode}}" class="input_css" readonly></ion-input>
+          </ion-col>
+      </ion-row>
+      <ion-row class="mtop_minus15px">
+          <ion-col col-4>
+                <ion-label fixed text-uppercase class="fs10 fw600">REGION/PROVINCE:</ion-label>
+          </ion-col>
+          <ion-col col-8>
+              <ion-input type="text" value="{{REGION}}" class="input_css" readonly></ion-input>
+          </ion-col>
+      </ion-row> 
+      <ion-row class="mtop_minus15px">
+          <ion-col col-4>
+                <ion-label fixed text-uppercase class="fs10 fw600">country:</ion-label>
+          </ion-col>
+          <ion-col col-8>
+              <ion-input type="text" value="{{country}}" class="input_css" readonly></ion-input>
+          </ion-col>
+      </ion-row>
+      <ion-row class="mtop_minus15px">
+          <ion-col col-4>
+                <ion-label fixed text-uppercase class="fs10 fw600">phone:</ion-label>
+          </ion-col>
+          <ion-col col-8>
+              <ion-input type="tel" value="{{mobile}}" class="input_css" readonly></ion-input>
+          </ion-col>
+      </ion-row>
+      <div class="posRelative mtop20">
+        <button ion-button class="answerButton butAnswerPos border-black" (click)="userEdit()">edit</button>
+      </div> 
+    </ion-grid>
+    <!-- platform access -->
+    <ion-grid class="borderDiv mtop10p">
+      <ion-row>
+        <ion-col col-6 text-start >
+            <div text-uppercase class="fs16 fw500">
+                platform access
+            </div>
+        </ion-col>
+        <ion-col col-6 text-right>
+          <button *ngIf="additionalemail == ''" ion-button icon-only class="addButton" (click)="platformChange()">
+            <ion-icon  name="add"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+      <ion-row class="">
+          <ion-col col-4>
+                <!-- <ion-label fixed text-uppercase class="fs10 fw600">Address:</ion-label> -->
+          </ion-col>
+          <ion-col col-8 text-right (click)="platformChange(this.additionalemail)">
+              <span *ngIf="additionalemail != ''" class="fs12 fw500 white spanEmail">{{this.additionalemail}}</span>
+          </ion-col>
+      </ion-row>
+    </ion-grid>
+    <!-- shipping address -->
+    <ion-grid class="borderDiv mtop10p">
+        <div text-uppercase text-start class="fs16 fw500 marginTopLeft">
+            shipping Details
+        </div>
+        
+        <ion-row>
+            <ion-col col-4>
+                  <ion-label fixed text-uppercase class="fs10 fw600">Address:</ion-label>
+            </ion-col>
+            <ion-col col-8>
+                <ion-input type="text" value="{{Shippingaddress}}" class="input_css" readonly></ion-input>
+            </ion-col>
+        </ion-row>
+        <ion-row class="mtop_minus15px">
+            <ion-col col-4>
+                  <ion-label fixed text-uppercase class="fs10 fw600">city:</ion-label>
+            </ion-col>
+            <ion-col col-8>
+                <ion-input type="text" value="{{ShippingCity}}" class="input_css" readonly></ion-input>
+            </ion-col>
+        </ion-row>
+        <ion-row class="mtop_minus15px">
+            <ion-col col-4>
+                  <ion-label fixed text-uppercase class="fs10 fw600">ZIP CODE:</ion-label>
+            </ion-col>
+            <ion-col col-8>
+                <ion-input type="text" value="{{Shippingzip}}" class="input_css" readonly></ion-input>
+            </ion-col>
+        </ion-row>
+        <ion-row class="mtop_minus15px">
+            <ion-col col-4>
+                  <ion-label fixed text-uppercase class="fs10 fw600">REGION/PROVINCE:</ion-label>
+            </ion-col>
+            <ion-col col-8>
+                <ion-input type="text" value="{{ShippingZone}}" class="input_css" readonly></ion-input>
+            </ion-col>
+        </ion-row> 
+        <ion-row class="mtop_minus15px">
+            <ion-col col-4>
+                  <ion-label fixed text-uppercase class="fs10 fw600">country:</ion-label>
+            </ion-col>
+            <ion-col col-8>
+                <ion-input type="text" value="{{Shippingcountry}}" class="input_css" readonly></ion-input>
+            </ion-col>
+        </ion-row>
+        <div class="posRelative mtop20">
+          <button ion-button class="answerButton butAnswerPos border-black" (click)="presentModal()">edit</button>
+        </div> 
+    </ion-grid>
+    <!-- payment details -->
+    <!-- <ion-grid class="borderDiv mtop10p">
+        <div text-uppercase text-start class="fs16 fw500 marginTopLeft">
+            payment details
+        </div>
+        <ion-row>
+          <ion-col col-4>
+              <ion-label fixed text-uppercase class="fs10 fw600">payment method:</ion-label>
+          </ion-col>
+          <ion-col col-8>
+              <ion-input type="text" value="" class="input_css"></ion-input>
+          </ion-col>
+        </ion-row>
+        <ion-row class="mtop_minus15px">
+          <ion-col col-4>
+                <ion-label fixed text-uppercase class="fs10 fw600">card number:</ion-label>
+          </ion-col>
+          <ion-col col-8>
+              <ion-input type="tel" value="" class="input_css"></ion-input>
+          </ion-col>
+        </ion-row>
+        <ion-row class="mtop_minus15px">
+            <ion-col col-4>
+                  <ion-label fixed text-uppercase class="fs10 fw600">card holder's full name:</ion-label>
+            </ion-col>
+            <ion-col col-8>
+                <ion-input type="text" value="" class="input_css"></ion-input>
+            </ion-col>
+        </ion-row>
+        <ion-row class="mtop_minus15px">
+            <ion-col col-4>
+                  <ion-label fixed text-uppercase class="fs10 fw600">card expiry date:</ion-label>
+            </ion-col>
+            <ion-col col-8>
+                <ion-input type="date" value="" class="input_css"></ion-input>
+            </ion-col>
+        </ion-row>
+        <ion-row class="mtop_minus15px">
+            <ion-col col-4>
+                  <ion-label fixed text-uppercase class="fs10 fw600">security CODE:</ion-label>
+            </ion-col>
+            <ion-col col-8>
+                <ion-input type="tel" value="" class="input_css"></ion-input>
+            </ion-col>
+        </ion-row>
+        <div class="posRelative mtop20">
+          <button ion-button class="answerButton butAnswerPos border-black" (click)="paymentEdit()">edit</button>
+        </div> 
+    </ion-grid> -->
+    <!-- subscription details -->
+    <ion-grid class="borderDiv mtop10p">
+        <div text-uppercase text-start class="fs16 fw500 marginTopLeft">
+            subscription details
+        </div>
+        <ion-row>
+          <ion-col col-4>
+              <ion-label fixed text-uppercase class="fs10 fw600">subscription :</ion-label>
+          </ion-col>
+          <ion-col col-8>
+                <ion-input  *ngIf="subscription_status == true"  type="text" value="Active" class="input_css" placeholder="Active" readonly></ion-input>
+                <ion-input  *ngIf="subscription_status != true"  type="text" value="Expired" class="input_css" placeholder="Expired" readonly></ion-input>
+          </ion-col>
+        </ion-row>
+        <ion-row class="mtop_minus15px">
+          <ion-col col-4>
+                <ion-label fixed text-uppercase class="fs10 fw600">expiry date:</ion-label>
+          </ion-col>
+          <ion-col col-8>
+              <ion-input type="text" value="{{subscriptionMsg}}" class="input_css" readonly></ion-input>
+          </ion-col>
+        </ion-row>
+        <div class="posRelative mtop20">
+          <button ion-button class="answerButton butAnswerPos border-black" (click)="subscribe()">edit</button>
+        </div> 
+    </ion-grid>
+    <!-- subscription details -->
+    <div padding class="borderDiv mtop10p">
+      <div text-uppercase text-center class="fs16 fw500">
+          platform Settings
+      </div>
+      <div text-center margin-top>
+          <button ion-button class="saveChanges border-black" (click)="advance()">Advance Setting</button>
+          <button ion-button class="saveChanges border-black" (click)="languageSet()">language settings</button>
+          <button ion-button class="saveChanges border-black" (click)="info()">information settings</button>  
+      </div>
+    </div>
+    <div text-center class="padding10">
+      <!-- <button ion-button class="logoutButton border-black">log out</button> -->
+      <button ion-button icon-start class="logoutButton border-black" (click)="logout()">
+          <ion-icon name="log-out"></ion-icon>
+          log out
+        </button>
+    </div>    
+  </div>
+</ion-content>

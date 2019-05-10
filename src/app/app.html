@@ -1,0 +1,29 @@
+<ion-menu [content]="content">
+  <ion-header no-border>
+    <ion-navbar transparent class="themColor">
+      <ion-title>
+        <div text-center>
+          <img src="/assets/icon/logo_alex.png" alt="logo" style="width:120px;"/>
+        </div>
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  <!-- <ion-icon name="book"></ion-icon>
+  <ion-icon name="search"></ion-icon>
+  <ion-icon name="heart"></ion-icon>
+  <ion-icon name="cog"></ion-icon> -->
+
+  <ion-content class="themColor">
+    <!-- <ion-list> -->
+      <button menuClose icon-start ion-item *ngFor="let p of pages" (click)="openPage(p)" class="button_menu black fs20 fw400" >
+        <img width="20px" height="20px" src="{{p.icon}}" style="margin-right: 10px;
+        margin-bottom: -5px;"/>
+        <span style="font-weight: 600;">{{p.title}}</span>
+      </button>
+    <!-- </ion-list> -->
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

@@ -1,0 +1,70 @@
+page-forgetPwd {
+    
+    .logo{
+        width: 225px !important;
+    }
+    
+    .item-md.item-block .item-inner {
+        border-bottom: none !important;
+        box-shadow: none !important;
+    }
+    .list-md .item-input:last-child {
+        border-bottom: none !important;
+        box-shadow: none !important;
+    }
+    .item.item-md .checkbox-md {
+        position: static;
+        display: block;
+        margin: 9px 9px 9px 4px !important;
+    }
+    .item.item-block.item-md.item-input.item-label-stacked.input-has-value.item-input-has-value.input-has-focus.item-input-has-focus{
+        border-bottom: none !important;
+        box-shadow: none !important;
+    }
+    .iconheader{
+        position: absolute !important;
+        left: 15px !important;
+        top: 14px !important;
+        font-size: 25px !important;
+
+    }
+    .borderRedi{
+        border-radius: 5px !important;
+        
+    }
+    .checkbox-md {
+        margin-bottom: -2px !important;
+        margin-right: 10px !important;
+    }
+    .checkbox-ios {
+        margin-bottom: -2px !important;
+        margin-right: 10px !important;
+
+    }
+    .login_button{
+        height: 45px !important;
+        font-size: 20px !important; 
+        background: #ffffff !important;
+        color: #007a95 !important;
+        font-weight: 600 !important;
+        text-transform: uppercase !important;
+    }
+    .icon_img{
+        position: absolute !important;
+        top: 13px !important;
+        left: 10px !important;
+        font-size: 20px !important;
+        color: #ffffff !important;
+    }
+    .inputDiv{
+        height:45px !important;
+        position: relative !important;
+        border: 1px solid #007a95 !important;
+        margin-bottom: 10px !important;
+    }
+    .ionitemDesign{
+        background: #007a95;
+        color: white !important;
+        border: 1px solid #ffffff !important;
+    }
+}

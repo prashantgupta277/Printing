@@ -1,0 +1,62 @@
+<ion-header no-border>
+    <ion-navbar transparent class="themColor white">
+      <ion-title>
+        <div text-center class="white">
+          <!-- <img src="/assets/icon/logo_alex.png" alt="logo" style="width:120px;"/> -->
+          Forgot Password
+        </div>
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  <ion-content padding class="themColor">
+      <div class="margin_top_10">
+        <div text-center>
+          <img src="/assets/icon/logo_alex.png" alt="3d printerlogo image" class="logo"/>
+        </div>
+        <div style="padding:50px;">
+    
+          <ion-list class="text_center" >
+            <div class="inputDiv">
+                <ion-item class="backgroundTransparent borderRedi ionitemDesign" style="height: 100%;">
+                  <ion-input type="email" class="mleft10 mtop5" placeholder="Email" [(ngModel)]="user.email"></ion-input>
+                </ion-item>
+                <ion-icon name="person" class="icon_img"></ion-icon>
+                <!-- <img src='assets/imgs/UserICon.png' class="icon_img"> -->
+            </div>
+          </ion-list>
+          <div class="mtop5">
+            <div>
+              <button ion-button full text-capitalize class="login_button borderRedi" (click)="sendRequest()">Submit</button>
+            </div>
+            <div text-center>
+              <p class="fs16 fw500 darkgray">Back to? <span class="fs16 white font-bold">Signin</span></p>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </ion-content>
+<!-- <ion-content padding>
+  <div class="margin_top_10">
+    <div text-center>
+      <img src="/assets/imgs/logo.png" alt="3d printerlogo image" class="logo"/>
+      <p class="textColor fs16 fw500">Welcome Logo</p>
+    </div>
+    <div style="padding: 15px;">
+      <ion-list>
+        <ion-item>
+          <ion-label stacked class="fw500 fs16 black">Email</ion-label>
+          <ion-input type="email" placeholder="test@gmail.com" [(ngModel)]="user.email" class="border_bottom"></ion-input>
+        </ion-item>
+      </ion-list>
+    </div>
+    <div style="padding: 10px;">
+      <div>
+        <button ion-button full text-capitalize class="themColor login_button" (click)="sendRequest()">send request</button>
+      </div>
+      <div text-center (click)="back()">
+        <p class="fs16 fw500 darkgray">Back to? <span class="fs16 textColor font-bold">Signin</span></p>
+      </div>
+    </div>
+  </div>
+</ion-content> -->

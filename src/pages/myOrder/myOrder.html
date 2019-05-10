@@ -1,0 +1,65 @@
+
+
+<ion-header no-border>
+  <ion-toolbar transparent class="themColor white">
+      <button ion-button menuToggle >
+        <ion-icon name="menu" class="white"></ion-icon>
+      </button>
+      <ion-title>
+        <div text-center>
+          <img src="/assets/icon/logo_alex.png" alt="logo" style="width:120px;"/>
+        </div>
+      </ion-title>
+      <ion-buttons end>
+          <button style="background:transparent;" (click)="back()">
+              <img src="/assets/icon/app_icon/back.png" alt="logo" style="width:30px;"/>
+          </button>
+      </ion-buttons>  
+  </ion-toolbar>  
+</ion-header>
+
+<ion-content class="bgWhite">
+  <div text-center class="mtop15 mbot20">
+      <p text-uppercase class="textColor fs14 font-bold">my orders</p>
+  </div>
+
+  <div class="mtop15" *ngFor="let item of Orderlist">
+    <ion-row >
+      <ion-col col-6>
+        <div>
+          <img src="{{imgUrl}}{{item.image}}" alt="logo" class="borderReds" style="height: 180px;"/>
+        </div>
+      </ion-col>
+      <ion-col col-6>
+        <div>
+          <h6 class="Text mtop1 mb0 fs14">Order Date :</h6>
+          <p class="mtop1 fs14">{{item.order_date}}</p>
+        </div>
+        <div>
+          <h6 class="Text mtop1 mb0 fs14">Status :</h6>
+          <p class="mtop1 fs14">"Shipping : 24 Apr 2019 "</p>
+        </div>
+        <div>
+          <h6 class="Text mtop1 mb0 fs14">Product :</h6>
+          <p class="mtop1 fs14">{{item.name}}</p>
+        </div>
+        <div>
+          <h6 class="Text mtop1 mb0 fs14">Price :</h6>
+          <p class="mtop1 fs14">23.50</p>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6 text-center>
+        <div class="buttonDiv">
+          <button class="themColor DiscoverButton" (click)="viewOrder(item)">View Product</button>
+        </div>
+      </ion-col>
+      <ion-col col-6 text-center>
+        <div class="buttonDiv">
+          <button class="themColor DiscoverButton" (click)="productReturn()">Product Return</button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>

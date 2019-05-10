@@ -1,0 +1,81 @@
+page-languageSettingModal{
+        display: block !important;
+        width: 90% !important;
+        height: 65% !important;
+        contain: strict !important;
+        border-radius: 10px !important;
+        position: absolute !important;
+        left: 0 !important;
+        top: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        margin: auto !important;
+        box-shadow: 0 16px 20px rgba(0,0,0,.4) !important;
+        background-color: #fafafa !important;
+        
+    .margins{
+        margin-bottom: 15px !important;
+        margin-top: 10px !important;
+    }
+    .saveChanges{
+        width: 75% !important;
+        height: 30px !important;
+        background-color: #0b7b94 !important;
+        text-transform: uppercase !important;
+    }
+    .logoutButton{
+        width: 50% !important;
+        height: 30px !important;
+        background-color: #0b7b94 !important;
+        text-transform: uppercase !important;
+    }
+    .input_css{
+        border: 1px solid #000 !important;
+        height: 25px !important;
+        top: 8px !important;
+        border-radius: 5px !important;
+    }
+    .text-input-md {
+        margin: 4px 8px !important;
+        padding: 0;
+        width: calc(100% - 8px - 8px);
+        text-transform: capitalize !important;
+    }
+    .answerButton{
+        height: 30px !important;
+        background-color: #0b7b94 !important;
+        text-transform: uppercase !important;
+        width: 50% !important;
+        font-size: 14px !important;
+    }
+    .butAnswerPos{
+        position: absolute !important;
+        top: -12px !important;
+        right: 20px !important;
+    }
+    .marginTopLeft{
+        margin-left: 5px !important;
+        margin-top: 5px !important;
+    }
+    .addButton{
+        background: #0b7b94 !important;
+        width: 25px !important;
+        height: 25px !important;
+    }
+    .spanEmail{
+        background: #0b7b94 !important;
+        padding: 5px 10px !important;
+        border-radius: 5px !important;
+    }
+    ion-select {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        overflow: hidden;
+        max-width: 100% !important;
+        border: 1px solid #000 !important;
+        margin: 0 auto !important;
+        border-radius: 5px !important;
+    }   
+}

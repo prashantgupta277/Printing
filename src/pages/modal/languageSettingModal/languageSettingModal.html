@@ -1,0 +1,28 @@
+<ion-content>
+    <div padding>
+        <div text-uppercase text-center margin-top margin-bottom class="fs16 fw500 textTheme">
+            Languages Settings
+        </div>
+        <div class="parentDiv">
+            <div class="childDiv">
+                <ion-grid class="">
+                    <ion-row>
+                        <ion-col col-4>
+                            <ion-label fixed text-uppercase class="fs10 fw600">Languages</ion-label>
+                        </ion-col>
+                        <ion-col col-8>
+                            <ion-select text-uppercase [(ngModel)]="LanguageValue" class="selectText">
+                                <ion-option *ngFor="let item of LanguageListArray" value="{{item.id}}">{{item.name}}</ion-option>
+                            </ion-select>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+                <div text-center margin-top class="">
+                    <button ion-button class="logoutButton border-black" (click)="saveData()">
+                        save
+                    </button>
+                </div>
+            </div>
+        </div>    
+    </div>
+</ion-content>

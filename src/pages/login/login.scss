@@ -1,0 +1,95 @@
+page-login {
+
+    
+    .checkbox-md .checkbox-checked {
+        border-color: #ffffff !important;
+        background-color: #007a95 !important;
+    }
+    .login_button{
+        // height: 45px !important;
+        font-size: 20px !important; 
+        background: #ffffff !important;
+        color: #007a95 !important;
+        font-weight: 600 !important;
+        text-transform: uppercase !important;
+    }
+    .icon_img{
+        position: absolute !important;
+        top: 13px !important;
+        left: 10px !important;
+        font-size: 20px !important;
+        color: #808080 !important;
+      }
+      .inputDiv{
+        height:45px !important;
+        position: relative !important;
+        border: 1px solid #007a95 !important;
+        margin-bottom: 10px !important;
+      }
+    .logo{
+        width: 225px !important;
+    }
+    // customized css
+    // .checkbox-md .checkbox-icon {
+    //     border-color: #02286b !important;
+    // }
+    // .checkbox-md .checkbox-checked {
+    //     border-color: #02286b !important;
+    //     background-color: #02286b !important;
+    // }
+    .item-md.item-block .item-inner {
+        border-bottom: none !important;
+        box-shadow: none !important;
+    }
+    .list-md .item-input:last-child {
+        border-bottom: none !important;
+        box-shadow: none !important;
+    }
+    .item.item-md .checkbox-md {
+        position: static;
+        display: block;
+        margin: 9px 9px 9px 4px !important;
+    }
+    .item.item-block.item-md.item-input.item-label-stacked.input-has-value.item-input-has-value.input-has-focus.item-input-has-focus{
+        border-bottom: none !important;
+        box-shadow: none !important;
+    }
+
+    // .checkbox-ios .checkbox-icon {
+    //     border-color: #02286b !important;
+    // }
+    // .checkbox-ios .checkbox-checked {
+    //     border-color: #02286b !important;
+    //     background-color: #02286b !important;
+    // }
+    .item-ios.item-block .item-inner {
+        border-bottom: none !important;
+        box-shadow: none !important;
+    }
+    .list-ios .item-input:last-child {
+        border-bottom: none !important;
+        box-shadow: none !important;
+    }
+    .item.item-ios .checkbox-md {
+        position: static;
+        display: block;
+        margin: 9px 9px 9px 4px !important;
+    }
+    .item.item-block.item-ios.item-input.item-label-stacked.input-has-value.item-input-has-value.input-has-focus.item-input-has-focus{
+        border-bottom: none !important;
+        box-shadow: none !important;
+    }
+    .borderRedi{
+        border-radius: 5px !important;
+        
+    }
+    .checkbox-md {
+        margin-bottom: -2px !important;
+        margin-right: 10px !important;
+    }
+    .checkbox-ios {
+        margin-bottom: -2px !important;
+        margin-right: 10px !important;
+
+    }
+}

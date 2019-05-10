@@ -1,0 +1,86 @@
+<ion-content class="sample-modal-page">
+    <div padding>
+        <div text-uppercase text-center margin-top margin-bottom class="fs18 fw500 textTheme">
+            Select subscription
+        </div>
+        <div class="parentDiv">
+            <div text-center class="childDiv">
+                <div>
+                    <ion-grid>
+                        <ion-row>
+                            <ion-col col-6 text-start>
+                                <span text-uppercase class="fs14 fw500 lh3">billing month</span>
+                            </ion-col>
+                            <ion-col col-3 text-end>
+                                <span text-uppercase class="fs14 fw500 lh3">{{monthly}} $</span>
+                            </ion-col>
+                            <ion-col col-3 text-end>
+                                <ion-item>
+                                    <ion-radio checked="{{check.monthly}}" value="5,00" (click)="checkValue('monthly')"></ion-radio>
+                                </ion-item>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row>
+                            <ion-col col-6 text-start>
+                                <span text-uppercase class="fs14 fw500 lh3">billing quarter</span>
+                            </ion-col>
+                            <ion-col col-3 text-end>
+                                <span text-uppercase class="fs14 fw500 lh3">{{quaterly}} $</span>
+                            </ion-col>
+                            <ion-col col-3 text-end>
+                                <ion-item>
+                                    <ion-radio checked="{{check.quaterly}}" value="12,00" (click)="checkValue('quaterly')"></ion-radio>
+                                </ion-item>
+                            </ion-col>
+                            <!-- <ion-col col-6 text-end>
+                                <span text-uppercase class="fs14 fw500">12,00 $</span>
+                            </ion-col> -->
+                        </ion-row>
+                        <ion-row>
+                            <ion-col col-6 text-start>
+                                <span text-uppercase class="fs14 fw500 lh3">billing semester</span>
+                            </ion-col>
+                            <ion-col col-3 text-end>
+                                <span text-uppercase class="fs14 fw500 lh3">{{semester}} $</span>
+                            </ion-col>
+                            <ion-col col-3 text-end>
+                                <ion-item>
+                                    <ion-radio checked="{{check.semester}}" value="25,00" (click)="checkValue('semester')"></ion-radio>
+                                </ion-item>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row>
+                            <ion-col col-6 text-start>
+                                <span text-uppercase class="fs14 fw500 lh3">billing year</span>
+                            </ion-col>
+                            <ion-col col-3 text-end>
+                                <span text-uppercase class="fs14 fw500 lh3">{{yearly}} $</span>
+                            </ion-col>
+                            <ion-col col-3 text-end>
+                                <ion-item>
+                                    <ion-radio checked="{{check.yearly}}" value="50,00" (click)="checkValue('yearly')"></ion-radio>
+                                </ion-item>
+                            </ion-col>
+                            <!-- <ion-col col-6 text-end>
+                                <span text-uppercase class="fs14 fw500">50,00 $</span>
+                            </ion-col> -->
+                        </ion-row>
+                    </ion-grid>
+                </div>
+                <div text-center>
+                    <p text-uppercase class="fs18 fw500 m0">
+                        new expiry date
+                    </p>
+                    <p text-uppercase class="fs16 fw600 mtop5">22 may 2019</p>
+                </div>
+                <div text-center class="mtop5">
+                    <button (click)="Payment()" ion-button class="answerButton border-black w65">proceed to payment</button>
+                    <button (click)="saveData()" ion-button icon-start margin-top class="answerButton border-black w40">
+                        <ion-icon name="arrow-round-back" class="white"></ion-icon>
+                        go back
+                    </button>
+                </div>
+            </div>
+        </div>    
+    </div>
+</ion-content>

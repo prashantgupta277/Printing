@@ -1,0 +1,71 @@
+<ion-header no-border>
+  <ion-toolbar transparent class="themColor white">
+      <button ion-button menuToggle >
+        <ion-icon name="menu" class="white"></ion-icon>
+      </button>
+      <ion-title>
+        <div text-center style="margin-left: 38px;">
+          <img src="/assets/icon/logo_alex.png" alt="logo" style="width:120px;"/>
+        </div>
+      </ion-title>
+      <ion-buttons end>
+          <button style="background:transparent;" (click)="back()">
+              <img src="/assets/icon/app_icon/back.png" alt="logo" style="width:30px;"/>
+          </button>
+      </ion-buttons>
+  </ion-toolbar>  
+</ion-header>
+
+<ion-content>
+  <div>
+    <div *ngFor="let item of Category">
+        <div text-center>
+            <h3 class="textColor fw600 upcase">{{catName}}</h3>
+        </div>
+        <div class="padding10" >
+          <!-- ---------Slider-------- -->
+          <ion-slides style="height: 180px !important;" loop="true" speed="1000" pager="true" paginationType="bullets" (ionSlideDidChange)="slideChanged()">
+              <ion-slide *ngFor="let itemImage of item.image" >
+                <video *ngIf="itemImage.type != 'Image'" preload="metadata" autoplay="autoplay" webkit-playsinline="webkit-playsinline" class="videoPlayer borderReds HW100">
+                  <source src="{{imgUrl}}{{itemImage.img}}" type="video/mp4"/>
+                </video>
+                <img *ngIf="itemImage.type == 'Image'" src="{{imgUrl}}{{itemImage.img}}" alt="logo" class="hw100"/>
+            </ion-slide>
+          </ion-slides>
+          <!-- ---------Slider-------- -->
+
+          <div text-center class="mtop10">
+                <span class="textColor fw500">"{{item.description}}"</span>
+          </div>
+          <!-- ------Text and Add to Cart Button------- -->
+          <div *ngIf="item.forsale == 'yes'">
+            <div *ngIf="SubCat == true">
+              <div text-center style="padding: 0px 70px 0px 70px;" *ngIf="item.main_cat_forsale == 'yes'" >
+                  <h6 class="upcase" style="border:1px solid;">This item is included in the collection on sale</h6>
+              </div>
+            </div>
+            <div text-center style="padding: 0px 107px 0px 107px;">
+                <h3 class="upcase" style="border:1px solid;">{{item.price}} C</h3>
+            </div>
+            <div class="buttonDiv">
+              <button class="themColor DiscoverButton" (click)="cart(item)">Add to Cart</button>
+            </div>
+          </div>
+          <!-- ------Text and Add to Cart Button------- -->
+        </div>
+    </div>
+   
+    <ion-grid no-padding class="mtop15" *ngIf="otherfiles != ''">
+      <ion-row>
+        <ion-col col-6 no-padding *ngFor="let item of otherfiles">
+          <ion-card (click)="subCat(item)">
+            <img src="{{imgUrl}}{{item.image}}" alt="logo" style="height: 100%;"/>
+            <div class="opctyDiv">
+              <h2 class="opctyText">{{item.name}}</h2>
+            </div>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

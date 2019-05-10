@@ -1,0 +1,25 @@
+<ion-content class="sample-modal-page">
+    <div padding>
+        <div text-uppercase text-center margin-top margin-bottom class="fs16 fw500 textTheme">
+           Update Mail
+        </div>
+        <ion-row class="mtop25 mtop_minus15px">
+            <ion-col col-4>
+                <ion-label fixed text-uppercase class="fs10 fw600">Email:</ion-label>
+            </ion-col>
+            <ion-col col-8>
+                <ion-input type="text" value="" [(ngModel)]="Email" class="input_css"></ion-input>
+            </ion-col>
+        </ion-row>
+        <div text-center class="padding10">
+            <button ion-button class="logoutButton border-black" (click)="saveData()">
+                save
+            </button>
+        </div>    
+        <!-- <div class="parentDiv">
+            <div text-center class="childDiv">
+                <p class="fs14 fw500">www.xxxxx.com/faq</p>
+            </div>
+        </div>     -->
+    </div>
+</ion-content>

@@ -1,0 +1,71 @@
+
+<ion-header no-border>
+  <ion-toolbar transparent class="themColor white">
+      <button ion-button menuToggle >
+        <ion-icon name="menu" class="white"></ion-icon>
+      </button>
+      <ion-title>
+        <div text-center style="margin-left: 38px;">
+          <img src="/assets/icon/logo_alex.png" alt="logo" style="width:120px;"/>
+        </div>
+      </ion-title>
+      <ion-buttons end>
+        <button style="background:transparent;" (click)="back()">
+            <img src="/assets/icon/app_icon/back.png" alt="logo" style="width:30px;"/>
+        </button>
+      </ion-buttons> 
+  </ion-toolbar>  
+</ion-header>
+<ion-content padding class="">
+  <div text-center text-uppercase class="fs18 fw500">
+    personalised services requests
+  </div>
+  <div style="margin-top: 25px;">
+    <!-- <div text-start>
+      <p text-uppercase class="fs14 fw500">Request Id : 1223456789d</p>
+    </div> -->
+    <div style="display: flex;">
+      <p text-uppercase class="fs14 fw500 w20">title :</p>
+      <ion-input type="text" [(ngModel)]="SendReq.title" placeholder="Type to write" class="inputCss w80"></ion-input>
+    </div>
+    <div>
+      <p text-uppercase class="fs14 fw500">Message :</p>
+      <div>
+        <textarea placeholder="Type to write" clear-text class="txtArea" [(ngModel)]="SendReq.message">
+        </textarea>
+      </div>
+    </div>
+    <div margin-top>
+      <ion-row>
+        <ion-col col-6 text-start>
+            <p text-uppercase class="fs14 fw500">Attachments</p>
+        </ion-col>
+        <ion-col col-6 text-end>
+            <!-- <button ion-button class="answerButton border-black">
+                <ion-icon ios="ios-attach" md="md-attach"></ion-icon>
+              select file
+            </button> -->
+            <button ion-button icon-start class="answerButton border-black" (click)="SelectFile()">
+              <!-- <ion-icon name="home"></ion-icon> -->
+              <ion-icon ios="ios-attach" md="md-attach"></ion-icon>
+              select file
+            </button>
+        </ion-col>
+      </ion-row>
+      <!-- -----IfFileSelected----- -->
+      <ion-row *ngIf="SendReq.file != ''">
+          <ion-col col-10 text-start>
+              <p text-uppercase class="fs10 fw500">{{this.SendReq.file}}</p>
+          </ion-col>
+          <ion-col col-2 text-start (click)="remove()">
+              <ion-icon ios="ios-close" md="md-close"></ion-icon>
+          </ion-col>
+      </ion-row>
+      <!-- -----IfFileSelected----- -->
+
+    </div>
+    <div margin-top text-center>
+        <button ion-button class="sendMsg border-black" (click)="AddPersonal()">send message</button>
+    </div>
+  </div>
+</ion-content>

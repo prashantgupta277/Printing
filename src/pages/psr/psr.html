@@ -1,0 +1,84 @@
+<!-- <ion-header no-border>
+  <ion-navbar transparent class="themColor white">
+    <button ion-button menuToggle>
+      <ion-icon name="menu" class="white"></ion-icon>
+    </button>
+    <div text-center>
+      <img src="/assets/icon/logo_alex.png" alt="logo" style="width:120px;"/>
+    </div>
+  </ion-navbar>
+</ion-header> -->
+
+<ion-header no-border>
+  <ion-toolbar transparent class="themColor white">
+      <button ion-button menuToggle >
+        <ion-icon name="menu" class="white"></ion-icon>
+      </button>
+      <ion-title>
+        <div text-center style="margin-left: 38px;">
+          <img src="/assets/icon/logo_alex.png" alt="logo" style="width:120px;"/>
+        </div>
+      </ion-title>
+      <ion-buttons end >
+          <button style="background:transparent;" (click)="back()">
+              <img src="/assets/icon/app_icon/back.png" alt="logo" style="width:30px;"/>
+          </button>
+      </ion-buttons>  
+  </ion-toolbar>  
+</ion-header>
+
+<ion-content padding class="">
+  <div text-center text-uppercase class="fs18 fw500">
+    personalised services requests
+  </div>
+  <div text-center>
+    <div text-center style="margin: 10px 0px 20px 0px;" >
+      <p class="newRequest border-black" (click)="makeReq()" tappable>
+          <ion-icon name="text" class="white" style="margin-right: 5px;"></ion-icon>
+        make a new request
+      </p>
+    </div>
+    <!-- <div class="timeDiv">
+        <div text-right>
+            <p class="fs12 fw500 black margin5px">22/01/2019</p>
+            <p class="fs12 fw500 black margin2px">3.15 PM</p>
+        </div>
+        <div text-start class="" style="padding-left: 5px;">
+          <p text-uppercase class="fs14 fw600">sdsfdf</p>
+        </div>
+        <div text-justify class="">
+          <p class="fs12">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.
+          </p>
+        </div>
+        <div text-start class="" style="padding-left: 5px;">
+          <p text-uppercase class="fs12 fw500">Attachments : filepreview.jpg</p>
+        </div>
+        <div class="posRelative mtop20">
+          <button ion-button class="answerButton butAnswerPos border-black">answer</button>
+        </div>
+    </div> -->
+    <!-- second div -->
+    <div class="timeDiv mtop10per" *ngFor="let item of PersonalDetails">
+        <div text-right>
+            <p class="fs12 fw500 black margin5px">{{item.date}}</p>
+            <p class="fs12 fw500 black margin2px">{{item.time}}</p>
+        </div>
+        <div text-start class="" style="padding-left: 5px;">
+          <p text-uppercase class="fs14 fw600">{{item.title}}</p>
+        </div>
+        <div text-justify class="">
+          <p class="fs12" style="padding-left: 5px;">
+           {{item.message}}
+          </p>
+        </div>
+        <div text-start class="" style="padding-left: 5px;">
+          <p text-uppercase class="fs12 fw500">Attachments : {{item.Filename}}</p>
+        </div>
+        <div class="posRelative mtop20">
+          <button *ngIf="item.priduct_link !=''" ion-button class="answerButton butViewPos border-black" (click)="viewProduct(item.priduct_link)">View Product</button>
+          <button ion-button class="answerButton butAnswerPos border-black">answer</button>
+        </div>
+    </div>
+  </div>
+</ion-content>

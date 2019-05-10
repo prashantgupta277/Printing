@@ -1,0 +1,131 @@
+
+<ion-header no-border>
+  <ion-toolbar transparent class="themColor white">
+      <button ion-button menuToggle >
+        <ion-icon name="menu" class="white"></ion-icon>
+      </button>
+      <ion-title>
+        <div text-center style="margin-left: 38px;">
+          <img src="/assets/icon/logo_alex.png" alt="logo" style="width:120px;"/>
+        </div>
+      </ion-title>
+      <ion-buttons end>
+          <button style="background:transparent;" (click)="cart()">
+              <img src="/assets/icon/app_icon/cart.png" alt="logo" style="width:30px;"/>
+          </button>
+      </ion-buttons>  
+  </ion-toolbar>  
+</ion-header>
+
+<ion-content>
+  <!-- //----if pair = 6-------- -->
+  <div *ngIf="this.pair == 6">
+    <div text-center class="divCard" *ngFor="let item of ProductList">
+      <ion-card class="card_height" >
+          <video *ngIf="item.file_type =='Video'" preload="metadata" autoplay="autoplay" webkit-playsinline="webkit-playsinline" class="videoPlayer cover_image">
+            <source src="{{imgUrl}}{{item.banner_img}}" type="video/mp4"/>
+          </video>
+        <img *ngIf="item.file_type =='Image'" src="{{imgUrl}}{{item.banner_img}}" class="cover_image" />
+        <div class="opctyDiv">
+          <h2 class="opctyText">{{item.text}}</h2>
+        </div>
+        <div class="buttonDiv">
+            <button (click)="detail()" class="themColor DiscoverButton">{{item.button_text}}</button>
+        </div>
+      </ion-card>
+    </div>
+  </div>
+  <!-- //----if pair = 6-------- -->
+
+  <!-- //----if pair = 2-------- -->
+  <div *ngIf="this.pair == 2">
+    <div *ngFor="let array of multiArray" >
+      <div class="mtop15">
+          <ion-row>
+            <ion-col col-6>
+              <div>
+                <video  *ngIf="array[0].file_type =='Video'" preload="metadata" autoplay="autoplay" webkit-playsinline="webkit-playsinline" class="videoPlayer borderReds" style="height: 160px;">
+                  <source src="{{imgUrl}}{{array[0].banner_img}}" type="video/mp4"/>
+                </video>
+                <img *ngIf="array[0].file_type == 'Image'" src="{{imgUrl}}{{array[0].banner_img}}" alt="logo" class="borderReds" style="height: 160px;"/>
+              </div>
+            </ion-col>
+            <ion-col col-6>
+              <div text-center>
+                <h4 class="Text">{{array[0].text}}</h4>
+                <span>"{{array[0].description}}"</span>
+              </div>
+            </ion-col>
+            <div class="buttonDiv1">
+              <button class="themColor DiscoverButton1">{{array[0].button_text}}</button>
+            </div>
+          </ion-row>
+      </div>
+      <div class="mtop15">
+        <ion-row>
+          <ion-col col-6>
+            <div text-center>
+              <h4 class="Text">{{array[1].text}}</h4>
+              <span>"{{array[1].description}}"</span>
+            </div>
+          </ion-col>
+          <ion-col col-6>
+            <div>
+              <video  *ngIf="array[0].file_type =='Video'" preload="metadata" autoplay="autoplay" webkit-playsinline="webkit-playsinline" class="videoPlayer borderReds" style="height: 160px;">
+                <source src="{{imgUrl}}{{array[1].banner_img}}" type="video/mp4"/>
+              </video>
+              <img *ngIf="array[0].file_type == 'Image'" src="{{imgUrl}}{{array[1].banner_img}}" alt="logo" class="borderReds" style="height: 160px;"/>
+            </div>
+          </ion-col>
+          <div class="buttonDiv1">
+            <button class="themColor DiscoverButton1">{{array[1].button_text}}</button>
+          </div>
+        </ion-row>
+    </div>
+      <!-- <div>
+        <div text-center>
+          <h4 class="Text">{{array[1].text}}</h4>
+        </div>
+        <div class="fullImgDiv">
+          <video *ngIf="array[1].file_type == 'Video'" preload="metadata" autoplay="autoplay" webkit-playsinline="webkit-playsinline" class="videoPlayer borderReds HW100">
+            <source src="https://admin.3dhom.com/{{array[1].banner_img}}" type="video/mp4"/>
+          </video>
+          <img alt="logo" *ngIf="array[1].file_type == 'Image'" src="https://admin.3dhom.com/{{array[1].banner_img}}" alt="logo" class="borderReds HW100"/>
+        </div>
+        <div text-center style="padding: 4px 25px 4px 25px;" class="mtop5">
+          <span>"{{array[1].description}}"</span>
+        </div>
+        <div class="buttonDiv1">
+          <button class="themColor DiscoverButton1">{{array[1].button_text}}</button>
+        </div>
+      </div> -->
+    </div>
+  </div>
+  
+  <!-- //----if pair = 2-------- -->
+
+  <!-- //----if pair = 4-------- -->
+  <div *ngIf="this.pair == 4">
+    <div  class="mtop15" *ngFor="let item of ProductList">
+      <div text-center>
+        <h4 class="Text">{{item.text}}</h4>
+      </div>
+      <div class="fullImgDiv1" style="position: relative;">
+          <video  *ngIf="item.file_type =='Video'" preload="metadata" autoplay="autoplay" webkit-playsinline="webkit-playsinline" class="videoPlayer borderReds1 HW1001">
+              <source src="{{imgUrl}}{{item.banner_img}}" type="video/mp4"/>
+            </video>
+          <img *ngIf="item.file_type =='Image'" src="{{imgUrl}}{{item.banner_img}}" class="borderReds1 HW100" />
+          <div class="buttonDiv2">
+            <button class="themColor DiscoverButton2">{{item.button_text}}</button>
+          </div>
+      </div>
+      
+      <div text-center style="padding: 15px 25px 15px 25px;" class="mtop5">
+        <span>"{{item.description}}"</span>
+      </div>
+    </div>
+  </div>
+    
+  <!-- //----if pair = 4-------- -->
+</ion-content>
+

@@ -1,0 +1,81 @@
+<ion-header no-border>
+    <ion-toolbar transparent class="themColor white">
+        <button ion-button menuToggle >
+            <ion-icon name="menu" class="white"></ion-icon>
+        </button>
+        <ion-title>
+            <div text-center style="margin-left: 38px;">
+            <img src="/assets/icon/logo_alex.png" alt="logo" style="width:120px;"/>
+            </div>
+        </ion-title>
+        <ion-buttons end>
+            <button style="background:transparent;" (click)="back()">
+                <img src="/assets/icon/app_icon/back.png" alt="logo" style="width:30px;"/>
+            </button>
+        </ion-buttons>  
+    </ion-toolbar>  
+</ion-header>
+
+<ion-content padding10 >
+    <div style="padding: 30px;">
+        <div class="credit-card">
+            <div style="margin-bottom: 10px;text-align: center;">
+                <h4 class="title">Card detail</h4>
+            </div>
+            
+            <div class="form-body">
+                <!-- Card Number -->
+                <input type="tel" class="card-number" [(ngModel)]="Details.number" placeholder="Card Number">
+            
+                <!-- Date Field -->
+                <div class="date-field">
+                <div class="month">
+                    <select name="Month" [(ngModel)]="Details.expMonth" >
+                    <option value="00" selected>Month</option>
+                    <option value="01">January</option>
+                    <option value="02">February</option>
+                    <option value="03">March</option>
+                    <option value="04">April</option>
+                    <option value="05">May</option>
+                    <option value="06">June</option>
+                    <option value="07">July</option>
+                    <option value="08">August</option>
+                    <option value="09">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                    </select>
+                </div>
+                <div class="year">
+                    <select name="Year" [(ngModel)]="Details.expYear">
+                    <option value="0000">Select Year</option>
+                    <option value="2018">2018</option>
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                    </select>
+                </div>
+                </div>
+            
+                <!-- Card Verification Field -->
+                <div class="card-verification">
+                <div class="cvv-input">
+                    <input type="tel" placeholder="CVV" [(ngModel)]="Details.cvc">
+                </div>
+                <div class="cvv-details">
+                    <p>3 or 4 digits usually found <br> on the signature strip</p>
+                </div>
+                </div>
+            
+                <!-- Buttons -->
+                <button type="submit" class="proceed-btn" (click)="show()">Proceed</button>
+                <!-- <button type="submit" class="paypal-btn"><a href="#">Pay With</a></button> -->
+            </div>
+        </div>
+    </div>
+</ion-content>

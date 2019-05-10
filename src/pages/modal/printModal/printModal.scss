@@ -1,0 +1,58 @@
+page-printModal{
+    display: block !important;
+    width: 90% !important;
+    height: 65% !important;
+    contain: strict !important;
+    border-radius: 10px !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    margin: auto !important;
+    box-shadow: 0 16px 20px rgba(0,0,0,.4) !important;
+    background-color: #fafafa !important;
+    
+    .childDiv{
+        display: table-cell;
+        vertical-align: middle;
+    }
+    .parentDiv{
+        display: table;
+        width: 100%;
+        height: 280px;
+    }
+    .answerButton{
+        height: 30px !important;
+        background-color: #0b7b94 !important;
+        text-transform: uppercase !important;
+        font-size: 14px !important;
+    }
+    .w65{
+        width: 65% !important;
+    }
+    .w40{
+        width: 40% !important;
+    }
+    .w25{
+        width: 25% !important;
+    }
+    .radio-checked {
+        border-color: #0b7b94 !important;
+    }
+    .radio-inner {
+        background-color: #0b7b94 !important;
+    }
+    .lh3{
+        line-height: 3 !important;
+    }
+    // .item-md.item-block .item-inner {
+    //     border-bottom: none !important;
+    // }
+    .item-inner {
+        border-bottom: none !important;
+    }
+    ion-row{
+        height: 40px !important;
+    }
+}

@@ -1,0 +1,48 @@
+
+
+<ion-header no-border>
+  <ion-toolbar transparent class="themColor white">
+      <button ion-button menuToggle >
+        <ion-icon name="menu" class="white"></ion-icon>
+      </button>
+      <ion-title>
+        <div text-center style="margin-left: 38px;">
+          <img src="/assets/icon/logo_alex.png" alt="logo" style="width:120px;"/>
+        </div>
+      </ion-title>
+      <ion-buttons end>
+        <button style="background:transparent;" (click)="save()">
+            <img src="/assets/icon/app_icon/back.png" alt="logo" style="width:30px;"/>
+        </button>
+      </ion-buttons>  
+  </ion-toolbar>  
+</ion-header>
+
+<ion-content>
+  <div>
+    <div text-center>
+        <h4 text-uppercase class="textColor fw600">sort By</h4>
+    </div>
+    <div margin-top class="text-webkit">
+      <div class="width_max">
+        <ion-item no-border>
+          <ion-label text-capitalize>date</ion-label>
+          <ion-checkbox (click)="save('Date')" color="primary" checked="false" class="checkbox-margin"></ion-checkbox>
+        </ion-item>
+        
+        <ion-item no-border>
+          <ion-label text-capitalize>price low to high</ion-label>
+          <ion-checkbox (click)="save('0')" color="primary" checked="false" class="checkbox-margin"></ion-checkbox>
+        </ion-item>
+
+        <ion-item no-border>
+          <ion-label text-capitalize>price high to low</ion-label>
+          <ion-checkbox (click)="save('1')" color="primary" checked="false" class="checkbox-margin"></ion-checkbox>
+        </ion-item>
+      </div>
+      <!-- <div text-center margin-top class="posBot">
+        <button class="themColor okButton" (click)="save()">ok</button>
+      </div> -->
+    </div>
+  </div>
+</ion-content>

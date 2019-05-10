@@ -1,0 +1,153 @@
+page-home {
+    .divCard{
+        position:relative !important;
+        margin-bottom: 45px !important;
+    }
+    .cover_image{
+        height: 100% !important;
+        // width: auto !important;
+        margin: auto !important;
+    }
+    .card_height{
+        height: 235px !important;
+    }
+    .buttonDiv{
+        position: absolute !important;
+        bottom: -18px !important;
+        text-align: center !important;
+        width: 100% !important;
+        overflow: overlay !important;
+    }
+    .DiscoverButton{
+        width: 50% !important;
+        height: 32px !important;
+        color: white !important;
+        font-weight: 600 !important;
+        font-size: 15px !important;
+        border-radius: 5px !important;
+        border: 1px solid #000000 !important;
+        text-transform: uppercase !important
+    }
+    .opctyDiv{
+        position: absolute !important;
+        height: 28px !important;
+        width: 100% !important;
+        background: rgba(255, 255, 255, 0.7) !important;
+        opacity: 5.1 !important;
+        bottom: 58px !important;
+    }
+    .opctyText{
+        font-size: 20px !important;
+        font-weight: 600 !important;
+        color: #007a95 !important;
+        text-transform: uppercase !important;
+    }
+
+ //----page 2-------
+
+    .myioncard {
+        position: relative !important;
+        //height: 135px !important;
+        //border-radius: 15px !important;
+      }
+    
+    .card-title {
+        position: absolute !important;
+        bottom: 10px !important;
+        width: 100% !important;
+        text-align: center !important;
+    }
+    .card-title-inner{
+        font-size: 12px !important;
+        color: #fff;
+        width: 70% !important;
+        background-color: #02286b !important;
+        border-radius: 5px !important;
+        margin: auto !important
+    }
+    .Text{
+        font-size: 15px !important;
+        font-weight: 600 !important;
+        color: #007a95 !important;
+        text-transform: uppercase !important;
+    }
+    .buttonDiv1{
+        text-align: center !important;
+        width: 100% !important;
+        overflow: overlay !important;
+    }
+    .DiscoverButton1{
+        width: 50% !important;
+        height: 32px !important;
+        color: white !important;
+        font-weight: 600 !important;
+        font-size: 15px !important;
+        border-radius: 5px !important;
+        border: 1px solid #000000 !important;
+        text-transform: uppercase !important;
+        margin-bottom: 25px !important;
+        margin-top: 10px !important;
+    }
+    .fullImgDiv{
+        padding: 5px !important;
+        height: 200px !important;
+        width: 100% !important;
+    }
+    .borderReds{
+        border-radius: 5px !important;
+    }
+    .HW100{
+        height:100% !important;
+        width: 100% !important;
+    }
+
+
+    //--------------page 3
+
+
+    .card-title {
+        position: absolute !important;
+        bottom: 10px !important;
+        width: 100% !important;
+        text-align: center !important;
+    }
+    .card-title-inner{
+        font-size: 12px !important;
+        color: #fff;
+        width: 70% !important;
+        background-color: #02286b !important;
+        border-radius: 5px !important;
+        margin: auto !important
+    }
+    
+    .buttonDiv2{
+        text-align: center !important;
+        width: 100% !important;
+        overflow: overlay !important;
+        position: absolute;
+        bottom: -10px !important;
+        overflow: overlay !important;
+    }
+    .DiscoverButton2{
+        width: 50% !important;
+        height: 32px !important;
+        color: white !important;
+        font-weight: 600 !important;
+        font-size: 15px !important;
+        border-radius: 5px !important;
+        border: 1px solid #000000 !important;
+        text-transform: uppercase !important;
+    }
+    .fullImgDiv1{
+        padding: 5px !important;
+        height: 200px !important;
+        width: 100% !important;
+    }
+    .borderReds1{
+        border-radius: 5px !important;
+    }
+    .HW1001{
+        height:100% !important;
+        width: 100% !important;
+    }
+}

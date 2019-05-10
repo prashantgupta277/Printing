@@ -1,0 +1,122 @@
+page-psr {
+    .iconClass{
+        position: absolute !important;
+        right: 0px !important;
+        top:0px !important;
+    }
+    .cardShipping{
+        padding: 10px !important;
+        padding-top: 18px !important;
+    }
+    .rowBorder{
+        border-bottom: 1px solid #c8c7cc !important;
+    }
+    .freeShipingButton{
+        width: 81% !important;
+        height: 30px !important;
+        background-color: #70a22e !important;
+    }
+    .checkOutButton{
+        width: 80% !important;
+        height: 35px !important;
+        background-color: #70a22e !important;
+        text-transform: capitalize !important;
+    }
+    .amountColor{
+      color: #ef620b !important;
+    }
+    .normalButton{
+        width: 80% !important;
+        height: 35px !important;
+        background: #ffff !important;
+    }
+    .AddtoCartButton{
+        height: 30px !important;
+        background-color: #0b7b94 !important;
+        text-transform: uppercase  !important;
+        width: 98% !important;
+        font-size: 16px !important;
+    }
+    .newRequest{
+        // height: 40px !important;
+        // background-color: #0b7b94 !important;
+        // text-transform: uppercase  !important;
+        // width: 75% !important;
+        // font-size: 14px !important;
+        background-color: #0b7b94 !important;
+        text-transform: uppercase !important;
+        width: max-content !important;
+        font-size: 14px !important;
+        padding: 5px 25px !important;
+        border-radius: 5px !important;
+        margin: auto !important;
+        color: #fff !important;
+    }
+    .answerButton{
+        height: 30px !important;
+        background-color: #0b7b94 !important;
+        text-transform: uppercase !important;
+        width: 40% !important;
+        font-size: 14px !important;
+    }
+    .printButton{
+        height: 30px !important;
+        background-color: #70a22e !important;
+        text-transform: uppercase  !important;
+        width: 50% !important;
+        font-size: 14px !important;
+    }
+    .backButton{
+        height: 30px !important;
+        text-transform: uppercase  !important;
+        width: 50% !important;
+        font-size: 14px !important;
+    }
+    .border_style{
+        // border-bottom: 1px solid #999 !important;
+        box-shadow: 5px 0px 5px #999 !important;
+    }
+    .txtarea{
+        width: 100% !important;
+        height: 200px !important;
+        max-height: 250px !important;
+        padding: 12px !important;
+        background: #ebebeb !important;
+        font-size: 10px !important;
+        resize: none !important;
+        border: none !important; 
+    }
+    .para_title{
+        position: relative !important;
+        top: 5px !important;
+    }
+    .boxShadow{
+        box-shadow: 0px 2px 10px #999 !important;
+    }
+    
+    ion-card{
+        background: #f4f4f4 !important;
+    }
+    // .checkbox-md .checkbox-checked {
+    //     border-color: #000 !important;
+    //     background-color: #000 !important;
+    // }
+    .butAnswerPos{
+        position: absolute !important;
+        top: -12px !important;
+        right: 20px !important;
+    }
+    .butViewPos{
+        position: absolute !important;
+        top: -12px !important;
+        left: 20px !important;
+    }
+    .timeDiv{
+        border:1px solid #000 !important;
+        padding: 10px !important;
+        border-radius: 5px !important;
+    }
+    .mtop10per{
+        margin-top: 10% !important;
+    }
+}

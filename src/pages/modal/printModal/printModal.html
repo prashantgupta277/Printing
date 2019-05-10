@@ -1,0 +1,80 @@
+<ion-content>
+    <div padding text-center *ngIf="case == 'First'">
+        <img src="/assets/icon/print.png" alt="printing" class="w25" />
+        <div class="parentDiv">
+            <div  class="childDiv">
+                <div>
+                    <div text-uppercase text-center margin-top margin-bottom class="fs18 fw500 textTheme">
+                        printing
+                    </div>
+                    <div text-center>
+                        <p class="fs16 fw500 mtop5">
+                            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.""
+                        </p>
+                    </div>
+                    <div text-center class="mtop5">
+                        <button ion-button class="answerButton border-black w65" (click)="OnPrint()">print</button>
+                        <button ion-button icon-start margin-top class="answerButton border-black w40"  (click)="saveData()">
+                            <ion-icon name="arrow-round-back" class="white"></ion-icon>
+                            go back
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </div>
+    <!-- 2nd case -->
+    <div padding text-center *ngIf="case == 'Second'">
+        <img src="/assets/icon/print.png" alt="printing" class="w25" />
+        <div class="parentDiv">
+            <div  class="childDiv">
+                <div>
+                    <div text-uppercase text-center margin-top margin-bottom class="fs18 fw500 textTheme">
+                        printing
+                        <p text-uppercase class="fs16 fw500 mtop5">
+                                {{this.Percent}}%
+                        </p>
+                    </div>
+                    <div text-center>
+                        <p text-uppercase class="fs16 fw500 mtop5">
+                            remaining 00:00
+                        </p>
+                    </div>
+                    <div text-center class="mtop5">
+                        <button ion-button icon-start margin-top class="answerButton border-black w65"  (click)="saveData()">
+                            <ion-icon name="pause" class="white"></ion-icon>
+                            pause
+                        </button>
+                        <button ion-button icon-start margin-top class="answerButton border-black w65"  (click)="saveData()">
+                            <ion-icon name="pause" class="white"></ion-icon>
+                            stop
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </div>
+    <!-- 3rd case -->
+    <div padding text-center *ngIf="case == 'thired'">
+        <img src="/assets/icon/print.png" alt="printing" class="w25" />
+        <div class="parentDiv">
+            <div  class="childDiv">
+                <div>
+                    <div text-uppercase text-center margin-top margin-bottom class="fs18 fw500 textTheme">
+                        printing
+                    </div>
+                    <div text-center>
+                        <p class="fs16 fw500 mtop5">
+                            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.""
+                        </p>
+                    </div>
+                    <div text-center class="mtop5">
+                        <button ion-button margin-top class="answerButton border-black w65"  (click)="saveData()">
+                            ok
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </div>
+</ion-content>

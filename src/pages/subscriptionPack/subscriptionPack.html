@@ -1,0 +1,123 @@
+<!-- <ion-header no-border>
+  <ion-navbar transparent class="themColor white">
+    <button ion-button menuToggle>
+      <ion-icon name="menu" class="white"></ion-icon>
+    </button>
+    <div text-center>
+      <img src="/assets/icon/logo_alex.png" alt="logo" style="width:120px;"/>
+    </div>
+  </ion-navbar>
+</ion-header> -->
+
+<ion-header no-border>
+  <ion-toolbar transparent class="themColor white">
+      <button ion-button menuToggle >
+        <ion-icon name="menu" class="white"></ion-icon>
+      </button>
+      <ion-title>
+        <div text-center>
+          <img src="/assets/icon/logo_alex.png" alt="logo" style="width:120px;"/>
+        </div>
+      </ion-title>
+      <ion-buttons end>
+        <button ion-button class="headerButton">
+          <ion-icon name="share-alt" class="white"></ion-icon>
+        </button>
+      </ion-buttons>  
+  </ion-toolbar>  
+</ion-header>
+
+<ion-content class="bgDark">
+  <div class="margin_top_10">
+    <ion-card class="mbot20">
+      <div text-center class="padding15">
+        <p text-uppercase class="fs16 fw600">select subscription type</p>
+      </div>
+      <ion-row class="border-top">
+        <ion-col col-3 class="padding10 border-black border-left-none">
+          <div text-center>
+            <ion-checkbox color="dark" checked="true"></ion-checkbox>
+          </div>
+        </ion-col>
+        <ion-col col-3 class="border-black">
+          <div text-center>
+            <p class="fs18 fw600 position">$5.00</p>
+          </div>
+        </ion-col>
+        <ion-col col-6 class="border-black border-right-none">
+          <div text-center>
+            <p text-uppercase class="fs14 fw500" style="width: 60%;
+            margin: auto;">billing <span class="fs18 fw500">month</span></p>
+          </div>
+        </ion-col>
+      </ion-row>
+      <!--  -->
+      <ion-row>
+        <ion-col col-3 class="padding10 border-black border-left-none">
+          <div text-center>
+            <ion-checkbox color="dark" checked="true"></ion-checkbox>
+          </div>
+        </ion-col>
+        <ion-col col-3 class="border-black">
+          <div text-center>
+            <p class="fs18 fw600 position">$12.00</p>
+          </div>
+        </ion-col>
+        <ion-col col-6 class="border-black border-right-none">
+          <div text-center>
+            <p text-uppercase class="fs14 fw500" style="width: 60%;
+            margin: auto;">billing <span class="fs18 fw500">quarter</span></p>
+          </div>
+        </ion-col>
+      </ion-row>
+      <!--  -->
+      <ion-row>
+        <ion-col col-3 class="padding10 border-black border-left-none">
+          <div text-center>
+            <ion-checkbox color="dark" checked="true"></ion-checkbox>
+          </div>
+        </ion-col>
+        <ion-col col-3 class="border-black">
+          <div text-center>
+            <p class="fs18 fw600 position">$25.00</p>
+          </div>
+        </ion-col>
+        <ion-col col-6 class="border-black border-right-none">
+          <div text-center>
+            <p text-uppercase class="fs14 fw500" style="width: 60%;
+            margin: auto;">billing <span class="fs18 fw500">semester</span></p>
+          </div>
+        </ion-col>
+      </ion-row>
+      <!--  -->
+      <ion-row style="margin-bottom: 25px;" class="border-bottom">
+        <ion-col col-3 class="padding10 border-black border-left-none">
+          <div text-center>
+            <ion-checkbox color="dark" checked="true"></ion-checkbox>
+          </div>
+        </ion-col>
+        <ion-col col-3 class="border-black">
+          <div text-center>
+            <p class="fs18 fw600 position">$50.00</p>
+          </div>
+        </ion-col>
+        <ion-col col-6 class="border-black border-right-none">
+          <div text-center>
+            <p text-uppercase class="fs14 fw500" style="width: 60%;
+            margin: auto;">billing <span class="fs18 fw500">year</span></p>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+    <div>
+      <div text-center class="expiry_badge">
+        <p text-uppercase class="fs14 fw600">
+          new expiry date : 22 may 2019
+        </p>
+      </div>
+      <div text-center>
+        <button ion-button class="newRequest">proceed to payment</button>
+      </div>
+    </div>
+  </div>
+</ion-content>

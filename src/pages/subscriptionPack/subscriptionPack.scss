@@ -1,0 +1,81 @@
+page-subscriptionPack {
+    .iconClass{
+        position: absolute !important;
+        right: 0px !important;
+        top:0px !important;
+    }
+    .cardShipping{
+        padding: 10px !important;
+        padding-top: 18px !important;
+    }
+    .rowBorder{
+        border-bottom: 1px solid #c8c7cc !important;
+    }
+    .freeShipingButton{
+        width: 81% !important;
+        height: 30px !important;
+        background-color: #70a22e !important;
+    }
+    .checkOutButton{
+        width: 80% !important;
+        height: 35px !important;
+        background-color: #70a22e !important;
+        text-transform: capitalize !important;
+    }
+    .amountColor{
+      color: #ef620b !important;
+    }
+    .normalButton{
+        width: 80% !important;
+        height: 35px !important;
+        background: #ffff !important;
+       
+    }
+    .newRequest{
+        height: 40px !important;
+        background-color: #70a22e !important;
+        text-transform: uppercase  !important;
+        width: 75% !important;
+        font-size: 14px !important;
+    }
+    .expiry_badge{
+        background: #f4f4f4 !important;
+        padding: 5px !important;
+        margin: 15px !important;
+    }
+    .position{
+        top: 5px !important;
+        position: relative !important;
+    }
+    ion-card{
+        background: #f4f4f4 !important;
+        border-radius: 10px !important;
+        box-shadow: 2px 5px 10px !important;
+    }
+    .checkbox-md .checkbox-icon {
+        width: 30px !important;
+        height: 30px !important;
+    }
+    .checkbox-md-dark .checkbox-checked {
+        border-color: #222;
+        background-color: #fff !important;
+    }
+    .checkbox-md-dark .checkbox-checked .checkbox-inner {
+        border-color: #02286b !important;
+    }
+    .checkbox-md .checkbox-checked .checkbox-inner {
+        left: 9px !important;
+        top: 0;
+        position: absolute;
+        width: 10px !important;
+        height: 24px !important;
+        border-width: 5px;
+        border-top-width: 0px;
+        border-left-width: 0px;
+        border-style: solid;
+        border-color: #fff;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+
+}

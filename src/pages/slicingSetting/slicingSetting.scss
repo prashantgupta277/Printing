@@ -1,0 +1,145 @@
+page-slicingSetting {
+    .margins{
+        margin-bottom: 15px !important;
+        margin-top: 10px !important;
+    }
+    .saveChanges{
+        width: 50% !important;
+        height: 30px !important;
+        background-color: #70a22e !important;
+        text-transform: uppercase !important;
+    }
+    .title_input{
+        border: 1px solid #999 !important;
+        background: #fff !important;
+    }
+    .input_css{
+        // border: 1px solid #999 !important;
+        // background: #fff !important;
+        // height: 25px !important;
+        // width: 50% !important;
+        // min-width: 50% !important;
+        // top: 8px !important;
+        border: 1px solid #999 !important;
+        background: #fff !important;
+        height: 25px !important;
+        // top: 8px !important;
+        width: 70% !important;
+        // min-width: 25% !important;
+        // max-width: 25% !important;
+    }
+    .minus_icon{
+        position: relative !important;
+        right: 5px !important;
+        // top: 7px !important;
+        background: #0b7b94 !important;
+        color: #fff !important;
+    }
+    .add_icon{
+        background: #0b7b94 !important;
+        color: #fff !important;
+        position: relative !important;
+        left: 5px !important;
+        // top: 7px !important;
+    }
+    .position{
+        position: relative !important;
+        top: 5px !important;
+    }
+    .buildSelect{
+        text-align: left !important;
+        padding: 10px !important;
+    }
+    .iconPos{
+        width: 18px !important;
+        height: 18px !important;
+        font-size: 7px !important;
+    }
+    ion-card{
+        background: #f4f4f4 !important;
+    }
+    ion-input{
+        text-align: -webkit-center !important; 
+        height: 28px !important;
+        border-radius: 5px !important; 
+    }
+    .plaSelection{
+        width: 100% !important;
+        max-width: 80% !important;
+    }
+    .ionselectClass{
+        border: 1px solid #ccc !important;
+        border-radius: 5px !important;
+        min-width: 100% !important;
+        margin: auto !important;
+        height: 24px !important;
+    }
+    .select-md {
+        padding: 3px 6px 1px 12px !important;
+    }
+    .select-ios {
+        padding: 3px 6px 1px 12px !important;
+    }
+    .col{
+        padding: 0px !important;
+    }
+    .grid{
+        padding: 0px !important;
+    }
+    .paraMar{
+        margin: 0 auto !important;
+        margin-top: 10px !important;
+    }
+    .txtArea{
+        width: 100% !important;
+        border-radius: 5px !important;
+        height: 60px !important;
+        resize: none !important;
+    }
+    .select-text {
+        font-size: 14px !important;
+    }
+    .select-md .select-icon {
+        width: 20px !important;
+        height: 16px !important;
+        background: #007a95 !important;
+    }
+    .select-ios .select-icon {
+        width: 20px !important;
+        height: 16px !important;
+        background: #007a95 !important;
+    }
+    .text-input-md{
+        text-align: center !important;
+        margin: 4px 6px !important;
+    }
+    .text-input-ios{
+        text-align: center !important;
+        margin: 4px 6px !important;
+    }
+    .select-md .select-icon .select-icon-inner{
+        color: #fff !important;
+    }
+    .select-ios .select-icon .select-icon-inner{
+        color: #fff !important;
+    }
+    .radio-checked {
+        border-color: #0b7b94 !important;
+    }
+    .radio-inner {
+        background-color: #0b7b94 !important;
+    }
+    .lh3{
+        line-height: 3 !important;
+    }
+    .radioCss{
+        top: 3px !important;
+        left: 5px !important;
+    }
+    // .ion-col.col-7>ion-input.text-input-md {
+    //     margin: 4px 8px !important;
+    //     padding: 0;
+    //     width: calc(100% - 8px - 8px);
+    //     text-transform: capitalize !important;
+    // }
+}

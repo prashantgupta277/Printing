@@ -1,0 +1,137 @@
+
+
+<ion-header no-border>
+  <ion-toolbar transparent class="themColor white">
+      <button ion-button menuToggle >
+        <ion-icon name="menu" class="white"></ion-icon>
+      </button>
+      <ion-title>
+        <div text-center style="margin-left: 38px;">
+          <img src="/assets/icon/logo_alex.png" alt="logo" style="width:120px;"/>
+        </div>
+      </ion-title>
+      <ion-buttons end>
+        <button style="background:transparent;" (click)="back()">
+            <img src="/assets/icon/app_icon/back.png" alt="logo" style="width:30px;"/>
+        </button>
+      </ion-buttons>  
+  </ion-toolbar>  
+</ion-header>
+
+<ion-content>
+  <!-- ------GO TO Card Button------- -->
+  <div class="buttonDiv topButton">
+    <button class="themColor DiscoverButton" (click)="goToCart()">Go to Cart</button>
+  </div>
+  <!-- ------GO TO Card Button------- -->
+  <div *ngFor="let item of ShowData">
+    <div text-center>
+        <h3 class="textColor fw600 upcase">{{item.name}}</h3>
+    </div>
+    <div class="padding10" >
+      <!-- ------slider------ -->
+      <ion-slides style="height: 180px !important;" loop="true" speed="1000" pager="true" paginationType="bullets" (ionSlideDidChange)="slideChanged()">
+          <ion-slide *ngFor="let itemImage of item.image" >
+            <video *ngIf="itemImage.file_type != 'Image'" preload="metadata" autoplay="autoplay" webkit-playsinline="webkit-playsinline" class="videoPlayer borderReds HW100">
+              <source src="{{imgUrl}}{{itemImage.img}}" type="video/mp4"/>
+            </video>
+            <img *ngIf="itemImage.file_type == 'Image'" src="{{imgUrl}}{{itemImage.img}}" alt="logo" class="hw100"/>
+        </ion-slide>
+      </ion-slides>
+      <!-- ------slider------ -->
+      <div text-center class="mtop10">
+        <span class="textColor fw500">"{{item.description}}"</span>
+      </div>
+      <!-- ------Forsale is yes------- -->
+      <div *ngIf="item.main_cat_forsale == 'yes'">
+          <div *ngIf="item.file_type == '1' || item.file_type == '2'">
+            <!-- ------ Add to Cart Button------- -->
+            <div *ngIf="item.model_type == '2' || item.model_type == '3'">
+              <div class="buttonDiv">
+                <button class="themColor DiscoverButton" (click)="Cart(item)">Add to Cart</button>
+              </div>
+            </div>
+            <!-- ------Add to Cart Button------- -->
+            <!-- ------Select List and Print Button------- -->
+            <div *ngIf="item.file_type == '1'">
+              <div *ngIf="item.model_type == '1' || item.model_type == '4'">
+                  <div text-center style="padding: 0px 45px 0px 45px;">
+                      <p class="upcase">Choose Material</p>
+                      <ion-item style="border:1px solid;">
+                        <!-- //<ion-label class="upcase">PLA</ion-label> -->
+                        <ion-select [(ngModel)]="materialValue">
+                          <ion-option *ngFor="let data of materialListArray" Selected value="{{data.id}}">{{data.name}}</ion-option> 
+                        </ion-select>
+                      </ion-item>
+                  </div>
+                  <div class="buttonDiv">
+                    <button class="themColor DiscoverButton" (click)="print(item)">Print</button>
+                  </div>
+              </div>
+            </div>
+            <!-- ------Select List and Print Button------- -->
+          </div>
+      </div>
+      <!-- ------Forsale is yes------- -->
+
+      <!-- ------Forsale is No------- -->
+      <div *ngIf="item.main_cat_forsale != 'yes'">
+          <div *ngIf="item.file_type == '1' || item.file_type == '2'">
+            <!-- ------Text show------- -->
+            <div *ngIf="item.model_type == '2' || item.model_type == '3'">
+              <div text-center style="padding: 0px 70px 0px 70px;">
+                  <h6 class="upcase" style="border:1px solid;">This item is included in the collection on sale</h6>
+              </div>
+            </div>
+            <!-- ------Text show------- -->
+            <!-- ------Material Select List and Print Button -------- -->
+            <div *ngIf="item.file_type == '1'">
+              <div *ngIf="item.model_type == '1' || item.model_type == '4'">
+                  <div text-center style="padding: 0px 45px 0px 45px;">
+                      <p class="upcase">Choose Material</p>
+                      <ion-item style="border:1px solid;">
+                        <!-- //<ion-label class="upcase">PLA</ion-label> -->
+                        <ion-select [(ngModel)]="materialValue">
+                          <ion-option *ngFor="let data of materialListArray" Selected value="{{data.id}}">{{data.name}}</ion-option> 
+                        </ion-select>
+                      </ion-item>
+                  </div>
+                  <div class="buttonDiv">
+                    <button class="themColor DiscoverButton" (click)="print(item)">Print</button>
+                  </div>
+              </div>
+            </div>
+            <!-- ------Material Select List and Print Button-------- -->
+          </div>
+      </div>
+      <!-- ------Forsale is No------- -->
+
+      <!-- ------File Type is 3------ -->
+      <div *ngIf="item.file_type == '3'">
+        <div class="buttonDiv">
+          <button class="themColor DiscoverButton">Visit Link</button>
+        </div>
+        <div class="buttonDiv">
+          <button class="themColor DiscoverButton">Share</button>
+        </div>   
+      </div>
+      <!-- ------File Type is 3------- -->
+    </div>
+    <ion-grid padding class="mtop15" *ngIf="otherFiles != ''">
+        <div text-center>
+            <h3 class="textColor upcase">Explore more</h3>
+        </div>
+      <ion-row>
+        <ion-col col-12 no-padding *ngFor="let item of otherFiles">
+          <ion-card (click)="subCat()">
+            <img src="{{imgUrl}}{{item.image}}" alt="logo" style="height: 100%;"/>
+            <div class="opctyDiv">
+              <h2 class="opctyText">{{item.name}}</h2>
+            </div>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
+

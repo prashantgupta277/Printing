@@ -1,0 +1,85 @@
+<ion-content class="sample-modal-page">
+    <div padding>
+        <!-- shipping address -->
+        <ion-grid class="">
+            <div text-center text-uppercase margin-top margin-bottom class="fs16 fw500 textTheme">
+                User Details
+            </div>
+            <ion-row>
+                <ion-col col-4>
+                    <ion-label fixed text-uppercase class="fs10 fw600">Name:</ion-label>
+                </ion-col>
+                <ion-col col-8>
+                    <ion-input type="text" value="" [(ngModel)]="UserFinalDetails.name" class="input_css"></ion-input>
+                </ion-col>
+            </ion-row>
+            <ion-row class="mtop_minus15px">
+                <ion-col col-4>
+                        <ion-label fixed text-uppercase class="fs10 fw600">Surname:</ion-label>
+                </ion-col>
+                <ion-col col-8>
+                    <ion-input type="text" value="" [(ngModel)]="UserFinalDetails.lname" class="input_css"></ion-input>
+                </ion-col>
+            </ion-row>
+            <ion-row class="mtop_minus15px">
+                <ion-col col-4>
+                    <ion-label fixed text-uppercase class="fs10 fw600">Address:</ion-label>
+                </ion-col>
+                <ion-col col-8>
+                    <ion-input type="text" value="" [(ngModel)]="UserFinalDetails.address" class="input_css"></ion-input>
+                </ion-col>
+            </ion-row>
+            <ion-row class="mtop_minus15px">
+                <ion-col col-4>
+                    <ion-label fixed text-uppercase class="fs10 fw600">country:</ion-label>
+                </ion-col>
+                <ion-col col-8 style="padding-top: 13px;">
+                    <ion-select (ionChange)="stateLoad($event)" [(ngModel)]="UserFinalDetails.country" class="fw500 buildSelect ionselectClass">
+                        <ion-option *ngFor="let country of countryList" value="{{country.id}}">{{country.name}}</ion-option>
+                    </ion-select>
+                </ion-col>
+            </ion-row>
+            <ion-row class="mtop_minus15px">
+                <ion-col col-4>
+                    <ion-label fixed text-uppercase class="fs10 fw600">REGION/PROVINCE:</ion-label>
+                </ion-col>
+                <ion-col col-8 style="padding-top: 13px;">
+                    <ion-select (ionChange)="cityLoad($event)" [(ngModel)]="UserFinalDetails.state"  class="fw500 buildSelect ionselectClass">
+                            <ion-option *ngFor="let state of stateList" value="{{state.id}}">{{state.name}}</ion-option>
+                    </ion-select>
+                </ion-col>
+            </ion-row>
+            <ion-row class="mtop_minus15px">
+                <ion-col col-4>
+                    <ion-label fixed text-uppercase class="fs10 fw600">city:</ion-label>
+                </ion-col>
+                <ion-col col-8 style="padding-top: 13px;">
+                    <ion-select  [(ngModel)]="UserFinalDetails.city" class="fw500 buildSelect ionselectClass">
+                        <ion-option *ngFor="let city of cityList" value="{{city.id}}" >{{city.name}}</ion-option>
+                    </ion-select>
+                </ion-col>
+            </ion-row>
+            <ion-row class="mtop_minus15px">
+                <ion-col col-4>
+                    <ion-label fixed text-uppercase class="fs10 fw600">ZIP CODE:</ion-label>
+                </ion-col>
+                <ion-col col-8>
+                    <ion-input type="text" value="" [(ngModel)]="UserFinalDetails.zipcode" class="input_css"></ion-input>
+                </ion-col>
+            </ion-row>
+            <ion-row class="mtop_minus15px">
+                <ion-col col-4>
+                    <ion-label fixed text-uppercase class="fs10 fw600">phone:</ion-label>
+                </ion-col>
+                <ion-col col-8>
+                    <ion-input type="tel" value="" [(ngModel)]="UserFinalDetails.mobile" class="input_css"></ion-input>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <div text-center class="padding10">
+            <button ion-button class="logoutButton border-black" (click)="saveData()">
+                save
+            </button>
+        </div>    
+    </div>
+</ion-content>

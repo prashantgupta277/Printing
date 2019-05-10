@@ -1,0 +1,30 @@
+page-visitLink {
+    .iconClass{
+        position: absolute !important;
+        right: 0px !important;
+        top:0px !important;
+    }
+    .cardDesign{
+        padding: 15px !important;
+        border-radius: 10px !important;
+    }
+    .priceCard{
+        height: 38px !important;
+        text-align: center !important;
+
+        padding-top: 6px !important;
+    }
+    .rowBorder{
+        border-bottom: 1px solid #c8c7cc !important;
+    }
+   
+    .AddtoCartButton{
+        height: 20px !important;
+        background-color: #70a22e !important;
+        text-transform: capitalize !important;
+    }
+    .amountColor{
+      color: #ef620b !important;
+    }
+
+}
